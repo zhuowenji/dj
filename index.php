@@ -5,7 +5,7 @@ if(isset($_GET['number']) && !empty($_GET['number'])){
     $number = trimall($_GET['number']);
     $da = array_unique(array_filter(explode(',', $number)));
 }
-
+ 
 $kj = all();
 
 //分配好每个年
@@ -22,7 +22,7 @@ $year_wei = repeat($all, 3, 1);
 $data = [];
 foreach ($all as $nian => $list) {
 
-    $ljlxbz  = 0;
+    $ljlxbz  = 1;
     $lxbz    = 0;
     $buzhong = 0;
     $zhong   = [];
@@ -37,8 +37,8 @@ foreach ($all as $nian => $list) {
             //计算最长连续不中
             $lxbz = $lxbz + 1;
             if ($lxbz > $buzhong) {
-                //累计连续不中最大次数清0
-                $ljlxbz  = 0;
+                //累计连续不中最大次数重置
+                $ljlxbz  = 1;
                 $buzhong = $lxbz;
                 $bzsj    = $value['time'];
             } elseif ($lxbz == $buzhong) {

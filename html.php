@@ -9,7 +9,7 @@
     <body>
         <div class="container">
 
-            <h3>输入头尾号码：<small>（如要搜索3头5尾请输入3-5，要搜索3头5,6头7两组号码请输入 3-5,6-7）</small></h3>
+            <h3>输入头尾号码：<small>（搜索3头5,6头7 输入格式 3-5,6-7）</small></h3>
             <form method="get" action="index.php">
               <div class="form-group">
                 <textarea class="form-control" rows="3" name="number"><?php echo isset($_GET['number']) && !empty($_GET['number']) ? $_GET['number'] : '3-5,6-7'; ?></textarea>
@@ -17,17 +17,14 @@
               <button type="submit" class="btn btn-default">查询</button>
             </form>
 
-            <h3>查询结果：</h3>
+            <h3>查询结果：<small>（<?php echo count($da) ?> 组头尾）</small></h3>
             <table class="table table-bordered">
                 <tr>
                     <th>年份时间</th>
-                    <th>开奖期数</th>
-                    <th>中奖期数</th>
+                    <th>开奖次数</th>
+                    <th>中奖次数</th>
                     <th>中奖概率</th>
-                    <th>连续不中期数</th>
-                    <th>连续不中时间</th>
-                    <th>连续不中期期数出现次数</th>
-                    <th>打奖组数</th>
+                    <th>最大连续不中次数</th>
                 </tr>
                 <?php foreach ($data as $info) {?>
                 <tr>
@@ -35,10 +32,11 @@
                     <td><?php echo $info['kai']; ?></td>
                     <td><?php echo $info['zhong']; ?></td>
                     <td><?php echo sprintf('%.2f', $info['gailv'] * 100); ?>%</td>
-                    <td><?php echo $info['buzhong']; ?></td>
-                    <td><?php echo $info['bzsj']; ?></td>
-                    <td><?php echo $info['ljlxbz']; ?></td>
-                    <td><?php echo count($da); ?></td>
+                    <td>
+                        <?php echo $info['buzhong']; ?><br/>
+                        时间： <?php echo $info['bzsj']; ?><br/>
+                        <?php echo $info['ljlxbz'] > 1 ? "连续 {$info['buzhong']} 期不中出现过 {$info['ljlxbz']} 次数" : ""?>
+                    </td>
                 </tr>
                 <?php }?>
             </table>
