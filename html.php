@@ -41,20 +41,20 @@
                 <?php }?>
             </table>
 
-            <h3> 头尾各重复出现次数(占比超全年10%以上标红) </h3>
+            <h3> 近5年头尾各重复出现次数(占比超全年10%以上标红) </h3>
             <table class="table table-bordered">
                 <tr>
                     <th>码\年份</th>
                     <?php $year = date('Y', time());?>
 
-                    <?php for ($i = 2010; $i <= $year; $i++) {?>
+                    <?php for ($i = 2013; $i <= $year; $i++) {?>
                     <th><?php echo $i; ?>(次数-比例)</th>
                     <?php }?>
                 </tr>
                 <?php for ($i = 0; $i <= 9; $i++) {?>
                 <tr>
                     <td><?php echo $i; ?>(头,尾)</td>
-                    <?php for ($start_year = 2010; $start_year <= $year; $start_year++) {?>
+                    <?php for ($start_year = 2013; $start_year <= $year; $start_year++) {?>
                     <td>
                         <?php $tou       = $year_tou[$start_year][$i];?>
                         <?php $tou_gailv = sprintf('%.2f', $tou / $year_tou[$start_year]['count'] * 100);?>
