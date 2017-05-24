@@ -1,7 +1,11 @@
 <?php
 
-include 'dj.php';
-
+$da = [];
+if(isset($_GET['number']) && !empty($_GET['number'])){
+    $number = trimall($_GET['number']);
+    $da = array_unique(array_filter(explode(',', $number)));
+}
+ 
 $kj = all();
 
 //分配好每个年
@@ -58,7 +62,7 @@ foreach ($all as $nian => $list) {
 
 function all()
 {
-    $mysqli = new mysqli('127.0.0.1', 'root', 'lampzhangcheng', 'fuxiben');
+    $mysqli = new mysqli('127.0.0.1', 'root', '', 'fuxiben');
     //只能用函数来判断是否连接成功
     if (mysqli_connect_errno()) {
         echo mysqli_connect_error();
@@ -106,6 +110,14 @@ function repeat($kj, $start, $stop)
     }
 
     return $res;
+}
+
+//此函数可以去掉空格，及换行。
+function trimall($str)
+{
+    $qian = [' ','/r/n','/r','/n','\'','/t','　','，'];
+    $hou  = ['','','','','','','',','];
+    return str_replace($qian,$hou,$str); 
 }
 
 include 'html.php';
