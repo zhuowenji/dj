@@ -62,7 +62,7 @@ foreach ($all as $nian => $list) {
 
 function all()
 {
-    $mysqli = new mysqli('127.0.0.1', 'root', '', 'fuxiben');
+    $mysqli = new mysqli('127.0.0.1', 'root', 'lampzhangcheng', 'fuxiben');
     //只能用函数来判断是否连接成功
     if (mysqli_connect_errno()) {
         echo mysqli_connect_error();
