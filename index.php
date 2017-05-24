@@ -1,11 +1,11 @@
 <?php
 
-$da = [];
+$da = ['3-5','6-7'];
 if(isset($_GET['number']) && !empty($_GET['number'])){
     $number = trimall($_GET['number']);
     $da = array_unique(array_filter(explode(',', $number)));
 }
- 
+
 $kj = all();
 
 //分配好每个年
