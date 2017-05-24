@@ -9,7 +9,7 @@
     <body>
         <div class="container">
 
-            <h3>输入头尾号码：<small>（搜索3头5,6头7 输入格式 3-5,6-7）</small></h3>
+            <h3>输入头尾号码<small>(3头5,6头7输入格式3-5,6-7)</small></h3>
             <form method="get" action="index.php">
               <div class="form-group">
                 <textarea class="form-control" rows="3" name="number"><?php echo isset($_GET['number']) && !empty($_GET['number']) ? $_GET['number'] : '3-5,6-7'; ?></textarea>
