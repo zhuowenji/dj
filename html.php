@@ -9,7 +9,7 @@
     <body>
         <div class="container">
 
-            <h3>输入头尾号码<small>(3头5,6头7输入格式3-5,6-7)</small></h3>
+            <h3>输入头尾号码 <small>3头5,6头7输入格式3-5,6-7</small></h3>
             <form method="get" action="index.php">
               <div class="form-group">
                 <textarea class="form-control" rows="3" name="number"><?php echo isset($_GET['number']) && !empty($_GET['number']) ? $_GET['number'] : '3-5,6-7'; ?></textarea>
@@ -17,7 +17,7 @@
               <button type="submit" class="btn btn-default">查询</button>
             </form>
 
-            <h3>查询结果：<small>（<?php echo count($da) ?> 组头尾）</small></h3>
+            <h3>查询结果 <small><?php echo count($da) ?> 组头尾</small></h3>
             <table class="table table-bordered">
                 <tr>
                     <th>年份时间</th>
