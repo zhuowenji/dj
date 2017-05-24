@@ -41,14 +41,14 @@
                 <?php }?>
             </table>
 
-            <h3> 近5年头尾各重复出现次数(占比超全年10%以上标红) </h3>
+            <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
             <table class="table table-bordered">
                 <tr>
                     <th>码\年份</th>
                     <?php $year = date('Y', time());?>
 
                     <?php for ($i = 2013; $i <= $year; $i++) {?>
-                    <th><?php echo $i; ?>(次数-比例)</th>
+                    <th><?php echo $i; ?></th>
                     <?php }?>
                 </tr>
                 <?php for ($i = 0; $i <= 9; $i++) {?>
