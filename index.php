@@ -32,7 +32,11 @@ if (isset($_GET['number']) && !empty($_GET['number'])) {
     $ip     = $_SERVER['REMOTE_ADDR'];
     $da_log = json_encode($da);
     $sql    = "INSERT INTO `search_log` (`id`, `content`, `ip`, `time`) VALUES (NULL, ' " . $da_log . "', '" . $ip . "', CURRENT_TIMESTAMP);";
-    $mysqli->query($sql);
+    $res    = $mysqli->query($sql);
+    if ($res === false) {
+        var_dump($mysqli->errno);
+        var_dump($mysqli->error);
+    }
 }
 
 $year_tou = repeat($all, 0, 1);
