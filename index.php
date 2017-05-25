@@ -1,6 +1,7 @@
 <?php
 
 include 'config.php';
+include 'function.php';
 
 //连接获取数据
 $mysqli = connect();
