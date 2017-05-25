@@ -17,7 +17,7 @@
               <button type="submit" class="btn btn-default">查询</button>
             </form>
 
-            <h3>查询结果 <small><?php echo count($da) ?> 组头尾</small></h3>
+            <h3>查询结果 <small><?php echo count($da); ?> 组头尾</small></h3>
             <table class="table table-bordered">
                 <tr>
                     <th>年份时间</th>
@@ -35,18 +35,43 @@
                     <td>
                         <?php echo $info['buzhong']; ?><br/>
                         时间： <?php echo $info['bzsj']; ?><br/>
-                        <?php echo $info['ljlxbz'] > 1 ? "连续 {$info['buzhong']} 期不中出现过 {$info['ljlxbz']} 次数" : ""?>
+                        <?php echo $info['ljlxbz'] > 1 ? "连续 {$info['buzhong']} 期不中出现过 {$info['ljlxbz']} 次数" : ''; ?>
                     </td>
                 </tr>
                 <?php }?>
             </table>
 
+            <h3>头尾连续不开期数 <small>0表示本期开 未表示今年未开过</small></h3>
+            <table class="table table-bordered">
+                <th></th>
+                <?php for ($i = 0; $i <= 9; $i++) {?>
+                <th><?php echo $i; ?></th>
+                <?php }?>
+
+                <tr>
+                    <td>头</td>
+                    <?php for ($i = 0; $i <= 9; $i++) {?>
+                        <?php $tou_wz = strpos($year_tou[$year]['number'], (string) $i);?>
+                        <?php $tou_mk = $tou_wz === false ? '未' : $tou_wz;?>
+                        <td><?php echo ($tou_mk === '未' || $tou_mk > 4) ? '<font color="red">' . $tou_mk . '</font>' : $tou_mk; ?></td>
+
+                    <?php }?>
+                </tr>
+                <tr>
+                    <td>尾</td>
+                    <?php for ($i = 0; $i <= 9; $i++) {?>
+                        <?php $wei_wz = strpos($year_wei[$year]['number'], (string) $i);?>
+                        <?php $wei_mk = $wei_wz === false ? '未' : $wei_wz;?>
+                        <td><?php echo ($wei_mk === '未' || $wei_mk > 4) ? '<font color="red">' . $wei_mk . '</font>' : $wei_mk; ?></td>
+                    <?php }?>
+                </tr>
+            </table>
+
+
             <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
             <table class="table table-bordered">
                 <tr>
                     <th></th>
-                    <?php $year = date('Y', time());?>
-
                     <?php for ($i = 2013; $i <= $year; $i++) {?>
                     <th><?php echo $i; ?></th>
                     <?php }?>

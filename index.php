@@ -12,6 +12,9 @@ if ($res === false) {
     var_dump($mysqli->error);
 }
 
+//当前年份
+$year = date('Y', time());
+
 $kj = [];
 while ($data = $res->fetch_array()) {
     $kj[] = $data;
@@ -39,8 +42,8 @@ if (isset($_GET['number']) && !empty($_GET['number'])) {
     }
 }
 
-$year_tou = repeat($all, 0, 1);
-$year_wei = repeat($all, 3, 1);
+$year_tou = repeat($all, 0, 1, $year);
+$year_wei = repeat($all, 3, 1, $year);
 
 $data = [];
 foreach ($all as $nian => $list) {
@@ -83,10 +86,8 @@ foreach ($all as $nian => $list) {
     $data[$nian]['gailv']   = count($zhong) / count($list);
 }
 
-function repeat($kj, $start, $stop)
+function repeat($kj, $start, $stop, $year)
 {
-    $year = date('Y', time());
-
     $year_all = [];
     for ($i = 2010; $i <= $year; $i++) {
         $all = '';
@@ -102,8 +103,11 @@ function repeat($kj, $start, $stop)
 
         for ($i = 0; $i <= 9; $i++) {
             $res[$year][$i] = substr_count($number, $i);
+
         }
-        $res[$year]['count'] = strlen($number);
+
+        $res[$year]['number'] = $number;
+        $res[$year]['count']  = strlen($number);
     }
 
     return $res;
