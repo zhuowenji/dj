@@ -1,23 +1,35 @@
 <?php
 
-$da = ['3-5','6-7'];
-if(isset($_GET['number']) && !empty($_GET['number'])){
-    $number = trimall($_GET['number']);
-    $da = array_unique(array_filter(explode(',', $number)));
-}
- 
-$kj = all();
+include 'config.php';
 
-//分配好每个年
-$all = [];
+//连接获取数据
+$mysqli = connect();
+$sql    = 'select * from kaijiang order by id desc';
+$res    = $mysqli->query($sql);
+if ($res === false) {
+    var_dump($mysqli->errno);
+    var_dump($mysqli->error);
+}
+
+$kj = [];
+while ($data = $res->fetch_array()) {
+    $kj[] = $data;
+}
+
 foreach ($kj as $key => $value) {
     $y         = date('Y', strtotime($value['time']));
     $all[$y][] = $value;
 }
 
+//搜索处理
+$da = ['3-5', '6-7'];
+if (isset($_GET['number']) && !empty($_GET['number'])) {
+    $number = trimall($_GET['number']);
+    $da     = array_unique(array_filter(explode(',', $number)));
+}
+
 $year_tou = repeat($all, 0, 1);
 $year_wei = repeat($all, 3, 1);
-// var_dump($year_tou['2010']);die;
 
 $data = [];
 foreach ($all as $nian => $list) {
@@ -60,32 +72,6 @@ foreach ($all as $nian => $list) {
     $data[$nian]['gailv']   = count($zhong) / count($list);
 }
 
-function all()
-{
-    $mysqli = new mysqli('127.0.0.1', 'root', 'lampzhangcheng', 'fuxiben');
-    //只能用函数来判断是否连接成功
-    if (mysqli_connect_errno()) {
-        echo mysqli_connect_error();
-    }
-
-    $sql = 'select * from kaijiang';
-    $res = $mysqli->query($sql);
-
-    if ($res === false) {
-        var_dump($mysqli->errno);
-        var_dump($mysqli->error);
-    }
-
-    mysqli_close($mysqli);
-
-    $kj = [];
-    while ($data = $res->fetch_array()) {
-        $kj[] = $data;
-    }
-
-    return $kj;
-}
-
 function repeat($kj, $start, $stop)
 {
     $year = date('Y', time());
@@ -110,14 +96,6 @@ function repeat($kj, $start, $stop)
     }
 
     return $res;
-}
-
-//此函数可以去掉空格，及换行。
-function trimall($str)
-{
-    $qian = [' ','/r/n','/r','/n','\'','/t','　','，'];
-    $hou  = ['','','','','','','',','];
-    return str_replace($qian,$hou,$str); 
 }
 
 include 'html.php';
