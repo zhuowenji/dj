@@ -9,6 +9,32 @@
     <body>
         <div class="container">
 
+            <h3>头尾连续不开期数 <small>0表示本期开 未表示今年未开过</small></h3>
+            <table class="table table-bordered">
+                <th></th>
+                <?php for ($i = 0; $i <= 9; $i++) {?>
+                <th><?php echo $i; ?></th>
+                <?php }?>
+
+                <tr>
+                    <td>头</td>
+                    <?php for ($i = 0; $i <= 9; $i++) {?>
+                        <?php $tou_wz = strpos($year_tou[$year]['number'], (string) $i);?>
+                        <?php $tou_mk = $tou_wz === false ? '未' : $tou_wz;?>
+                        <td><?php echo ($tou_mk === '未' || $tou_mk > 4) ? '<font color="red">' . $tou_mk . '</font>' : $tou_mk; ?></td>
+
+                    <?php }?>
+                </tr>
+                <tr>
+                    <td>尾</td>
+                    <?php for ($i = 0; $i <= 9; $i++) {?>
+                        <?php $wei_wz = strpos($year_wei[$year]['number'], (string) $i);?>
+                        <?php $wei_mk = $wei_wz === false ? '未' : $wei_wz;?>
+                        <td><?php echo ($wei_mk === '未' || $wei_mk > 4) ? '<font color="red">' . $wei_mk . '</font>' : $wei_mk; ?></td>
+                    <?php }?>
+                </tr>
+            </table>
+
             <h3>输入头尾号码 <small>3头5,6头7输入格式3-5,6-7</small></h3>
             <form method="get" action="index.php">
               <div class="form-group">
@@ -40,33 +66,6 @@
                 </tr>
                 <?php }?>
             </table>
-
-            <h3>头尾连续不开期数 <small>0表示本期开 未表示今年未开过</small></h3>
-            <table class="table table-bordered">
-                <th></th>
-                <?php for ($i = 0; $i <= 9; $i++) {?>
-                <th><?php echo $i; ?></th>
-                <?php }?>
-
-                <tr>
-                    <td>头</td>
-                    <?php for ($i = 0; $i <= 9; $i++) {?>
-                        <?php $tou_wz = strpos($year_tou[$year]['number'], (string) $i);?>
-                        <?php $tou_mk = $tou_wz === false ? '未' : $tou_wz;?>
-                        <td><?php echo ($tou_mk === '未' || $tou_mk > 4) ? '<font color="red">' . $tou_mk . '</font>' : $tou_mk; ?></td>
-
-                    <?php }?>
-                </tr>
-                <tr>
-                    <td>尾</td>
-                    <?php for ($i = 0; $i <= 9; $i++) {?>
-                        <?php $wei_wz = strpos($year_wei[$year]['number'], (string) $i);?>
-                        <?php $wei_mk = $wei_wz === false ? '未' : $wei_wz;?>
-                        <td><?php echo ($wei_mk === '未' || $wei_mk > 4) ? '<font color="red">' . $wei_mk . '</font>' : $wei_mk; ?></td>
-                    <?php }?>
-                </tr>
-            </table>
-
 
             <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
             <table class="table table-bordered">
