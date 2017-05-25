@@ -27,6 +27,12 @@ $da = ['3-5', '6-7'];
 if (isset($_GET['number']) && !empty($_GET['number'])) {
     $number = trimall($_GET['number']);
     $da     = array_unique(array_filter(explode(',', $number)));
+
+    //纪录查询记录
+    $ip     = $_SERVER['REMOTE_ADDR'];
+    $da_log = json_encode($da);
+    $sql    = "INSERT INTO `search_log` (`id`, `content`, `ip`, `time`) VALUES (NULL, ' " . $da_log . "', '" . $ip . "', CURRENT_TIMESTAMP);";
+    $mysqli->query($sql);
 }
 
 $year_tou = repeat($all, 0, 1);
