@@ -35,7 +35,8 @@
                 </tr>
             </table>
 
-            <h3>输入头尾号码 <small>3头5,6头7输入格式3-5,6-7</small></h3>
+            <h3>输入头尾号码</h3>
+            <h5><small>3头5,6头7 单组模式：3-5,6-7,头尾模式：36-57</small></h5>
             <form method="get" action="index.php">
               <div class="form-group">
                 <textarea class="form-control" rows="3" name="number"><?php echo isset($_GET['number']) && !empty($_GET['number']) ? $_GET['number'] : '3-5,6-7'; ?></textarea>
@@ -44,6 +45,8 @@
             </form>
 
             <h3>查询结果 <small><?php echo count($da); ?> 组头尾</small></h3>
+            <pre><?php echo implode(',', $da); ?></pre>
+            <h4></h4>
             <table class="table table-bordered">
                 <tr>
                     <th>年份时间</th>

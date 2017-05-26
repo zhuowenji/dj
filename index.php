@@ -30,6 +30,17 @@ $da = ['3-5', '6-7'];
 if (isset($_GET['number']) && !empty($_GET['number'])) {
     $number = trimall($_GET['number']);
     $da     = array_unique(array_filter(explode(',', $number)));
+    $re     = [];
+    foreach ($da as $value) {
+        $tou_wei = explode('-', $value);
+        for ($i = 0; $i < strlen($tou_wei[0]); $i++) {
+            $tou_chai = substr($tou_wei[0], $i, 1);
+            for ($w = 0; $w < strlen($tou_wei[1]); $w++) {
+                $re[] = $tou_chai . '-' . substr($tou_wei[1], $w, 1);
+            }
+        }
+    }
+    $da = array_unique($re);
 
     //纪录查询记录
     $ip     = $_SERVER['REMOTE_ADDR'];
