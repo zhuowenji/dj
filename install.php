@@ -38,8 +38,6 @@ if (isset($_GET['number']) && !empty($_GET['number']) && is_numeric($_GET['numbe
 	}else{
 		$msg = "添加成功";
 	}
-}else{
-	$msg = "号码错误";
 }
 
 ?>
@@ -58,11 +56,11 @@ if (isset($_GET['number']) && !empty($_GET['number']) && is_numeric($_GET['numbe
 	   		<?php echo isset($msg) ? '<h3>'.$msg.'</h3>' : "";?>
 			<form>
 				  <div class="form-group">
-				    <label for="exampleInputEmail1">号码</label>
+				    <label for="exampleInputEmail1">输入号码</label>
 				    <input type="text" name="number" class="form-control" id="exampleInputEmail1" placeholder="Number">
 				  </div>
 				  <div class="form-group">
-				    <label for="exampleInputEmail1">时间</label>
+				    <label for="exampleInputEmail1">输入时间</label>
 				    <input type="text" name="date" class="form-control" id="exampleInputEmail1" placeholder="<?php echo  $day ?>">
 				  </div>
 				  <button type="submit" class="btn btn-default">添加</button>

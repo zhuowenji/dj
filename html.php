@@ -10,7 +10,7 @@
     <body>
         <div class="container">
             <h1>
-                <font color="red"><?php echo $first['number'] ?></font>
+                <font color="red"><?php echo substr($first['number'],0,4) ?></font>
                 <small>第<?php echo $first['period'] ?>期 <?php echo $first['time'] ?></small>
             </h1>
             <h3>头尾连续不开期数 <small>0表示本期开 未表示今年未开过</small></h3>
