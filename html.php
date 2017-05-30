@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <meta charset="UTF-8" />
+        <title>头尾神策</title>
         <link href="bootstrap.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
     <body>
         <div class="container">
-
+            <h1>
+                <font color="red"><?php echo $first['number'] ?></font>
+                <small>第<?php echo $first['period'] ?>期 <?php echo $first['time'] ?></small>
+            </h1>
             <h3>头尾连续不开期数 <small>0表示本期开 未表示今年未开过</small></h3>
             <table class="table table-bordered">
                 <th></th>

@@ -20,6 +20,9 @@ while ($data = $res->fetch_array()) {
     $kj[] = $data;
 }
 
+//取最新一期
+$first = current($kj);
+
 foreach ($kj as $key => $value) {
     $y         = date('Y', strtotime($value['time']));
     $all[$y][] = $value;
