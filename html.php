@@ -40,7 +40,7 @@
                 </tr>
             </table>
 
-            <h3>推荐60组高奖率头尾 <small><a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率详情</a></small></h3>
+            <h3>推荐60组头尾 <small><a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率</a></small></h3>
             <blockquote><p><?php echo $tuijian; ?></p></blockquote>
 
             <h3>输入头尾号码</h3>
