@@ -43,13 +43,15 @@
             <h3>推荐60组头尾 <small><a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率</a></small></h3>
             <blockquote><p><?php echo $tuijian; ?></p></blockquote>
 
+
             <h3>输入头尾号码</h3>
             <h5><small>3头5,6头7 单组模式：3-5,6-7,头尾模式：36-57</small></h5>
             <form method="get" action="index.php">
               <div class="form-group">
-                <textarea class="form-control" rows="3" name="number"><?php echo isset($_GET['number']) && !empty($_GET['number']) ? $_GET['number'] : '3-5,6-7'; ?></textarea>
+                <textarea id="textarea" class="form-control" rows="3" name="number"><?php echo isset($_GET['number']) && !empty($_GET['number']) ? $_GET['number'] : '3-5,6-7'; ?></textarea>
               </div>
               <button type="submit" class="btn btn-default">查询</button>
+              <button type="button" onclick="ClearTextArea()" class="btn btn-default">清除</button>
             </form>
 
             <h3>查询结果 <small><?php echo count($da); ?> 组头尾</small></h3>
@@ -112,4 +114,10 @@
 
         </dev>
     </body>
+
+    <script type="text/javascript">
+        function ClearTextArea(){
+            document.getElementById("textarea").value="";
+        }
+    </script>
 </html>
