@@ -20,6 +20,9 @@ while ($data = $res->fetch_array()) {
     $kj[] = $data;
 }
 
+//推荐号码
+$tuijian = tuijian($kj);
+
 //取最新一期
 $first = current($kj);
 

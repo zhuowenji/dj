@@ -10,9 +10,10 @@
     <body>
         <div class="container">
             <h1>
-                <font color="red"><?php echo substr($first['number'],0,4) ?></font>
-                <small>第<?php echo $first['period'] ?>期 <?php echo $first['time'] ?></small>
+                <font color="red"><?php echo substr($first['number'], 0, 4); ?></font>
+                <small>第<?php echo $first['period']; ?>期 <?php echo $first['time']; ?></small>
             </h1>
+
             <h3>头尾连续不开期数 <small>0表示本期开 未表示今年未开过</small></h3>
             <table class="table table-bordered">
                 <th></th>
@@ -38,6 +39,13 @@
                     <?php }?>
                 </tr>
             </table>
+
+            <h3>推荐60组高奖率头尾 <small><a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率详情</a></small></h3>
+            <blockquote>
+                <p>
+                    <?php echo $tuijian; ?>
+                </p>
+            </blockquote>
 
             <h3>输入头尾号码</h3>
             <h5><small>3头5,6头7 单组模式：3-5,6-7,头尾模式：36-57</small></h5>
