@@ -41,11 +41,7 @@
             </table>
 
             <h3>推荐60组高奖率头尾 <small><a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率详情</a></small></h3>
-            <blockquote>
-                <p>
-                    <?php echo $tuijian; ?>
-                </p>
-            </blockquote>
+            <blockquote><p><?php echo $tuijian; ?></p></blockquote>
 
             <h3>输入头尾号码</h3>
             <h5><small>3头5,6头7 单组模式：3-5,6-7,头尾模式：36-57</small></h5>
@@ -57,7 +53,7 @@
             </form>
 
             <h3>查询结果 <small><?php echo count($da); ?> 组头尾</small></h3>
-            <pre><?php echo implode(',', $da); ?></pre>
+            <blockquote><p><?php echo implode(',', $da); ?></p></blockquote>
             <h4></h4>
             <table class="table table-bordered">
                 <tr>

@@ -45,10 +45,23 @@ foreach ($count as $key => $value) {
     }
 }
 
-$tuijian = '';
 arsort($str);
-foreach ($str as $value) {
-    $tuijian .= $value . ',';
+$tuijian = [];
+for ($i = 0; $i <= 9; $i++) {
+    $tuijian[$i] = '';
 }
 
-echo $tuijian;
+$jian = [];
+foreach ($str as $value) {
+    $tuijian_tou = substr($value, 0, 1);
+    $tuijian_wei = substr($value, 2, 1);
+
+    $tuijian[$tuijian_tou] .= $tuijian_wei;
+    $jian[$tuijian_tou] = $tuijian_tou . '-' . $tuijian[$tuijian_tou];
+}
+
+$tj = '';
+foreach ($jian as $value) {
+    $tj .= $value . ',';
+}
+echo $tj;
