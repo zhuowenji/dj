@@ -78,6 +78,10 @@
                 <?php }?>
             </table>
 
+            <h3>微信讨论群<small>手机端长按识别二维码</small></h3>
+            <img src="sc.png">
+
+<!-- 
             <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
             <table class="table table-bordered">
                 <tr>
@@ -105,7 +109,7 @@
                     <?php }?>
                 </tr>
                 <?php }?>
-            </table>
+            </table> -->
 
         </dev>
     </body>
