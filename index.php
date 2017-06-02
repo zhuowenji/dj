@@ -52,14 +52,12 @@ if (isset($_GET['number']) && !empty($_GET['number'])) {
                 for ($w = 0; $w < strlen($wei); $w++) {
                     $str_wei = substr($wei, $w, 1);
                     if (is_numeric($str_wei)) {
-                        $re[] = $ . '-' . $str_wei;
+                        $re[] = $str_tou . '-' . $str_wei;
                     }
                 }
             }
         }
-
     }
-
     $da = array_unique($re);
 
     //纪录查询记录
