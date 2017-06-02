@@ -42,13 +42,24 @@ if (isset($_GET['number']) && !empty($_GET['number'])) {
         if (count($tou_wei) == 1) {
             continue;
         }
-        for ($i = 0; $i < strlen($tou_wei[0]); $i++) {
-            $tou_chai = substr($tou_wei[0], $i, 1);
-            for ($w = 0; $w < strlen($tou_wei[1]); $w++) {
-                $re[] = $tou_chai . '-' . substr($tou_wei[1], $w, 1);
+
+        $tou = $tou_wei[0];
+        $wei = $tou_wei[1];
+
+        for ($i = 0; $i < strlen($tou); $i++) {
+            $str_tou = substr($tou, $i, 1);
+            if (is_numeric($str_tou)) {
+                for ($w = 0; $w < strlen($wei); $w++) {
+                    $str_wei = substr($wei, $w, 1);
+                    if (is_numeric($str_wei)) {
+                        $re[] = $ . '-' . $str_wei;
+                    }
+                }
             }
         }
+
     }
+
     $da = array_unique($re);
 
     //纪录查询记录
