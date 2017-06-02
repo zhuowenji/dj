@@ -3,15 +3,14 @@
 //此函数可以去掉空格，及换行。
 function trimall($str)
 {
-    $qian = [' ', '\r\n', '\r', '\n', '\'', '\t', '　', '，'];
-    $hou  = ['', '', '', '', '', '', '', ','];
+    $qian = [' ', '\'', '\t', '　', '，', PHP_EOL];
+    $hou  = ['', '', '', '', ',', ''];
     return str_replace($qian, $hou, $str);
 }
 
 //推荐号码
 function tuijian($kj)
 {
-
     $all = [];
     foreach ($kj as $key => $value) {
         $tou   = substr($value['number'], 0, 1);
