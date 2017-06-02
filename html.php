@@ -54,7 +54,13 @@
             </form>
 
             <h3>查询结果 <small><?php echo count($da); ?> 组头尾</small></h3>
+
+            <?php if (count($da) > 0) {?>
             <blockquote><p><?php echo implode(',', $da); ?></p></blockquote>
+            <?php } else {?>
+            <blockquote><font color="red">查询输入有误,请重新输入</font></blockquote>
+            <?php }?>
+
             <h4></h4>
             <table class="table table-bordered">
                 <tr>
