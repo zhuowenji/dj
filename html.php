@@ -44,7 +44,7 @@
             <blockquote><p><?php echo $tuijian; ?></p></blockquote>
 
 
-            <h3>输入头尾号码</h3>
+            <h3>输入头尾号码 <small><font color="red"><?php echo isset($da_msg) ? $da_msg : ''; ?></font></small> </small></h3>
             <h5><small>3头5,6头7 单组模式：3-5,6-7,头尾模式：36-57</small></h5>
             <form method="get" action="index.php">
               <div class="form-group">
@@ -82,7 +82,7 @@
 
             <h3>微信讨论群<small>手机端长按识别二维码</small></h3>
             <img src="sc.jpg" class="img-responsive" alt="Responsive image" />
-<!-- 
+<!--
             <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
             <table class="table table-bordered">
                 <tr>

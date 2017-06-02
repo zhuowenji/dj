@@ -33,7 +33,7 @@ foreach ($kj as $key => $value) {
 
 //搜索处理
 $da = ['3-5', '6-7'];
-if (isset($_GET['number']) && !empty($_GET['number'])) {
+if (isset($_GET['number']) && strstr($_GET['number'], '-')) {
     $number = trimall($_GET['number']);
     $da     = array_unique(array_filter(explode(',', $number)));
     $re     = [];
@@ -57,6 +57,8 @@ if (isset($_GET['number']) && !empty($_GET['number'])) {
         var_dump($mysqli->errno);
         var_dump($mysqli->error);
     }
+} else {
+    $da_msg = '输入有误';
 }
 
 $year_tou = repeat($all, 0, 1, $year);
