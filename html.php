@@ -10,8 +10,12 @@
     <body>
         <div class="container">
             <h1>
-                <font color="red"><?php echo substr($first['number'], 0, 4); ?></font>
-                <small>第<?php echo $first['period']; ?>期 <?php echo $first['time']; ?></small>
+                <font color="red"><?php echo $first['new']['number']; ?></font>
+                <small>第<?php echo $first['new']['period']; ?>期 <?php echo $first['new']['time']; ?></small>
+
+                <h4>
+                <small>上期开<?php echo $first['new']['tou']; ?>头<?php echo $first['new']['wei']; ?>尾时间 <?php echo $first['old']['time']; ?> 中间相隔 <?php echo $first['diff']; ?> 期</small>
+                </h4>
             </h1>
 
             <h3>头尾连续不开期数 <small>0表示本期开 未表示今年未开过</small></h3>
@@ -27,7 +31,6 @@
                         <?php $tou_wz = strpos($year_tou[$year]['number'], (string) $i);?>
                         <?php $tou_mk = $tou_wz === false ? '未' : $tou_wz;?>
                         <td><?php echo ($tou_mk === '未' || $tou_mk > 4) ? '<font color="red">' . $tou_mk . '</font>' : $tou_mk; ?></td>
-
                     <?php }?>
                 </tr>
                 <tr>

@@ -61,3 +61,34 @@ function tuijian($kj)
 
     return $tj;
 }
+
+//取最新一期的号码，和上一次时间
+function getFirstInfo($kj)
+{
+
+    $kai['new'] = [];
+    $i          = 1;
+
+    foreach ($kj as $value) {
+        $i++;
+        if (!isset($kai['new']['id'])) {
+            $kai['new']['id']     = $value['id'];
+            $kai['new']['period'] = $value['period'];
+            $kai['new']['time']   = $value['time'];
+            $kai['new']['number'] = substr($value['number'], 0, 4);
+            $kai['new']['tou']    = substr($value['number'], 0, 1);
+            $kai['new']['wei']    = substr($value['number'], 3, 1);
+        } elseif (!isset($kai['old']) && $kai['new']['tou'] == substr($value['number'], 0, 1) && $kai['new']['wei'] == substr($value['number'], 3, 1)) {
+            $kai['old']['id']     = $value['id'];
+            $kai['old']['period'] = $value['period'];
+            $kai['old']['time']   = $value['time'];
+            $kai['old']['number'] = substr($value['number'], 0, 4);
+            $kai['old']['tou']    = substr($value['number'], 0, 1);
+            $kai['old']['wei']    = substr($value['number'], 3, 1);
+
+            $kai['diff'] = $i;
+        }
+    }
+
+    return $kai;
+}

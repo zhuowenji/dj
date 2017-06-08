@@ -24,7 +24,7 @@ while ($data = $res->fetch_array()) {
 $tuijian = tuijian($kj);
 
 //取最新一期
-$first = current($kj);
+$first = getFirstInfo($kj);
 
 foreach ($kj as $key => $value) {
     $y         = date('Y', strtotime($value['time']));
