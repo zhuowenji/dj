@@ -44,12 +44,8 @@
                 </tr>
             </table>
 
-            <textarea  id="fztj"><?php echo $tuijian; ?></textarea>
             <h3>推荐60组头尾
-                <small>
-                    <a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率</a>
-                </small>
-
+                <small><a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率</a></small>
             </h3>
             <blockquote><p id="fz"><?php echo $tuijian; ?></p></blockquote>
 
