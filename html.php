@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>头尾神策</title>
         <link href="bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="function.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
@@ -43,8 +44,15 @@
                 </tr>
             </table>
 
-            <h3>推荐60组头尾 <small><a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率</a></small></h3>
-            <blockquote><p><?php echo $tuijian; ?></p></blockquote>
+            <textarea  id="fztj"><?php echo $tuijian; ?></textarea>
+            <h3>推荐60组头尾
+                <small>
+                    <a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率</a>
+                    <span onClick="copyTuijian()" >复制推荐</span>
+                </small>
+
+            </h3>
+            <blockquote><p id="fz"><?php echo $tuijian; ?></p></blockquote>
 
             <h3>输入头尾号码</h3>
             <h5><small>3头5,6头7 单组模式：3-5,6-7,头尾模式：36-57</small></h5>
@@ -122,10 +130,4 @@
 
         </dev>
     </body>
-
-    <script type="text/javascript">
-        function ClearTextArea(){
-            document.getElementById("textarea").value="";
-        }
-    </script>
 </html>
