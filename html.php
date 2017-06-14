@@ -48,7 +48,6 @@
             <h3>推荐60组头尾
                 <small>
                     <a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率</a>
-                    <span onClick="copyTuijian()" >复制推荐</span>
                 </small>
 
             </h3>
