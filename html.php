@@ -6,6 +6,8 @@
         <link href="bootstrap.css" rel="stylesheet">
         <script type="text/javascript" src="function.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="七星彩,头尾,七星彩头尾,七星彩论坛,湛江私彩,头尾规律">
+        <meta name="description" content="海南湛江七星彩，头尾，头尾神策，60组神码">
     </head>
 
     <body>
