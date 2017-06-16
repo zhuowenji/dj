@@ -1,5 +1,7 @@
 function ClearTextArea(){
     document.getElementById("textarea").value="";
+    document.getElementById("mqz").value="";
+    document.getElementById("qs").value="";
 }
 
 

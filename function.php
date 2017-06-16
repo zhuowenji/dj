@@ -65,7 +65,6 @@ function tuijian($kj)
 //取最新一期的号码，和上一次时间
 function getFirstInfo($kj)
 {
-
     $kai['new'] = [];
     $i          = 0;
 
@@ -93,4 +92,37 @@ function getFirstInfo($kj)
     }
 
     return $kai;
+}
+
+/**
+ * 每期稳赚算法
+ * @param   $da     打奖号码
+ * @param   $mqz    每期要赚
+ * @param   $qs     连打期数
+ * @param   $peilv  赔率
+ */
+function Wenzhuantongji($da, $mqz = 300, $qs = 5, $peilv = 90)
+{
+    $list = [];
+
+    //码组数
+    $mzs = count($da);
+
+    $sunshi = 0;
+    for ($i = 1; $i <= $qs; $i++) {
+        //每码打奖组数
+        $djzs = ceil(($sunshi + $mqz) / ($peilv - $mzs));
+        //花了的本
+        $ben = $djzs * $mzs;
+        //损失
+        $sunshi += $ben + $mqz;
+
+        $list[$i]['djzs']   = $djzs;
+        $list[$i]['qishu']  = $i;
+        $list[$i]['sunshi'] = $sunshi;
+        $list[$i]['ben']    = $ben;
+        $list[$i]['zhuan']  = $sunshi - $ben;
+    }
+
+    return $list;
 }
