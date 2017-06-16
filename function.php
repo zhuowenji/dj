@@ -67,10 +67,10 @@ function getFirstInfo($kj)
 {
 
     $kai['new'] = [];
-    $i          = 1;
+    $i          = 0;
 
     foreach ($kj as $value) {
-        $i++;
+
         if (!isset($kai['new']['id'])) {
             $kai['new']['id']     = $value['id'];
             $kai['new']['period'] = $value['period'];
@@ -87,6 +87,8 @@ function getFirstInfo($kj)
             $kai['old']['wei']    = substr($value['number'], 3, 1);
 
             $kai['diff'] = $i;
+        } else {
+            $i++;
         }
     }
 
