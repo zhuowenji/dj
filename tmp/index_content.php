@@ -51,7 +51,8 @@
         <?php } ?>
 
     </table>
-  <!--   <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
+    
+    <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
     <table class="table table-bordered">
         <tr>
             <th></th>
@@ -78,5 +79,5 @@
             <?php }?>
         </tr>
         <?php }?>
-    </table> -->
+    </table>
 </div>
