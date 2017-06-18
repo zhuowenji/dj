@@ -27,6 +27,14 @@ foreach (array_filter($ex_tuijian) as $info) {
 	$sixty[$num[0]] = $num[1]; 
 }
 
+$style = [
+	1 => 'active',
+	3 => 'success',
+	5 => 'warning',
+	7 => 'danger',
+	9 => 'info',
+];
+
 include 'tmp/head.php';
 include 'tmp/60_content.php';
 include 'tmp/foot.php';

@@ -20,7 +20,7 @@
 				<th>组数</th>
 			</tr>
 			<?php foreach ($sixty as $key => $info) { ?>
-			<tr>
+			<tr class="<?php echo isset($style[$key]) ? $style[$key] : '' ?>">
 				<td><?php echo $key ?></td>
 				<td><?php echo $info ?></td>
 				<td><?php echo strlen($info) ?></td>
