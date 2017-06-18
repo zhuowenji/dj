@@ -28,11 +28,11 @@ foreach (array_filter($ex_tuijian) as $info) {
 }
 
 $style = [
-	1 => 'active',
+	1 => 'info',
 	3 => 'success',
 	5 => 'warning',
 	7 => 'danger',
-	9 => 'info',
+	9 => 'active',
 ];
 
 include 'tmp/head.php';
