@@ -1,7 +1,7 @@
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
-    <h1>输入您连根码的数<small></small></h1>
-    <p>帮您评估风险</p>
+    <h1>输入您连跟码的数<small></small></h1>
+    <p>帮您风险评估</p>
   </div>
 </div>
 
