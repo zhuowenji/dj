@@ -145,7 +145,7 @@ function Wenzhuantongji($ms = 40, $mqz = 300, $qs = 5, $peilv = 90)
 function repeat($kj, $start, $stop, $year)
 {
     $year_all = [];
-    for ($i = 2010; $i <= $year; $i++) {
+    for ($i = 2011; $i <= $year; $i++) {
         $all = '';
         foreach ($kj[$i] as $info) {
             $tou = substr($info['number'], $start, $stop);
