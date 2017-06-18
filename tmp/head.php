@@ -27,7 +27,7 @@
         <div class="container">
             <div class="navbar-header ">
               <a href="/" class="navbar-brand">首页</a>
-              <a href="60.php" class="navbar-brand">60组码</a>
+              <a href="60.php" class="active navbar-brand">60组码</a>
               <a href="wx.php" class="navbar-brand">微信群</a>
             </div>
         </div>

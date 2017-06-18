@@ -7,6 +7,7 @@
   </div>
 </div>
 <div class="container">
+    <blockquote><p id="fz"><?php echo $tuijian; ?></p></blockquote>
     <h3>
         <small><a href="index.php?number=<?php echo $tuijian; ?>">点此查看概率</a></small>
     </h3>
