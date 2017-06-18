@@ -24,20 +24,12 @@
     <link rel="icon" href="/favicon.ico">
   </head>
   <body>
-    <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
-
-    <!-- Docs master nav -->
+        <!-- Docs master nav -->
     <header class="navbar navbar-static-top bs-docs-nav" id="top">
-      <div class="container">
-        <nav>
-            <ul class="nav nav-pills">
-                <li>
-                  <a href="/">首页</a>
-                </li>
-                <li class="active">
-                  <a href="wx.php">微信群</a>
-                </li>
-            </ul>
-        </nav>
-      </div>
+        <div class="container">
+            <div class="navbar-header">
+              <a href="../" class="navbar-brand">首页</a>
+              <a href="wx.php" class="navbar-brand">微信群</a>
+            </div>
+        </div>
     </header>
