@@ -30,7 +30,7 @@
     <header class="navbar navbar-static-top bs-docs-nav" id="top">
       <div class="container">
         <nav>
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-pills">
                 <li>
                   <a href="/">首页</a>
                 </li>

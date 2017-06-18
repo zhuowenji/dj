@@ -2,7 +2,7 @@
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
     <h1>长按识别二维码<small></small></h1>
-    <p>免费、无广告、多人讨论头尾、中奖福利等</p>
+    <p>免费、无广告、多人讨论头尾、福利等</p>
   </div>
 </div>
 <div class="container">
