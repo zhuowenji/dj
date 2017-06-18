@@ -23,7 +23,7 @@
   </head>
   <body>
         <!-- Docs master nav -->
-    <header class="navbar navbar-static-top  bs-docs-nav" id="top">
+    <header class="navbar navbar-fixed-top  bs-docs-nav" id="top">
         <div class="container">
             <div class="navbar-header ">
               <a href="/" class="navbar-brand">首页</a>
