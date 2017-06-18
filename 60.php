@@ -1,21 +1,10 @@
 <?php
-
 include 'config.php';
 include 'function.php';
 
-//连接获取数据
+//获取所有数据
 $mysqli = connect();
-$sql    = 'select * from kaijiang order by id desc';
-$res    = $mysqli->query($sql);
-if ($res === false) {
-    var_dump($mysqli->errno);
-    var_dump($mysqli->error);
-}
-
-$kj = [];
-while ($data = $res->fetch_array()) {
-    $kj[] = $data;
-}
+$kj = getAll($mysqli);
 
 //推荐号码
 $tuijian = tuijian($kj);

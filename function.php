@@ -1,5 +1,23 @@
 <?php
 
+//获取所有开奖
+function getAll($mysqli){
+	$sql    = 'select * from kaijiang order by id desc';
+	$res    = $mysqli->query($sql);
+	if ($res === false) {
+	    var_dump($mysqli->errno);
+	    var_dump($mysqli->error);
+	}
+
+	$kj = [];
+	while ($data = $res->fetch_array()) {
+	    $kj[] = $data;
+	}
+
+	return $kj;
+}
+
+
 //此函数可以去掉空格，及换行。
 function trimall($str)
 {
@@ -125,4 +143,31 @@ function Wenzhuantongji($da, $mqz = 300, $qs = 5, $peilv = 90)
     }
 
     return $list;
+}
+
+function repeat($kj, $start, $stop, $year)
+{
+    $year_all = [];
+    for ($i = 2010; $i <= $year; $i++) {
+        $all = '';
+        foreach ($kj[$i] as $info) {
+            $tou = substr($info['number'], $start, $stop);
+            $all .= $tou;
+        }
+        $year_all[$i] = $all;
+    }
+
+    $res = [];
+    foreach ($year_all as $year => $number) {
+
+        for ($i = 0; $i <= 9; $i++) {
+            $res[$year][$i] = substr_count($number, $i);
+
+        }
+
+        $res[$year]['number'] = $number;
+        $res[$year]['count']  = strlen($number);
+    }
+
+    return $res;
 }
