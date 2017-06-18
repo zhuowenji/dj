@@ -2,7 +2,7 @@
   <div class="container">
     <h1><?php echo $first['new']['number']; ?><small>第<?php echo $first['new']['period']; ?>期 <?php echo $first['new']['time']; ?></small></h1>
     <p>
-        <small>上期开<?php echo $first['new']['tou']; ?>头<?php echo $first['new']['wei']; ?>尾时间 <?php echo $first['old']['time']; ?> 中间相隔 <?php echo $first['diff']; ?> 期</small>
+        <small>上期开<?php echo $first['new']['tou']; ?>头<?php echo $first['new']['wei']; ?>尾时间 <?php echo $first['old']['time']; ?> 相隔 <?php echo $first['diff']; ?> 期</small>
     </p>
   </div>
 </div>
