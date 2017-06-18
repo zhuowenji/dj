@@ -51,19 +51,6 @@ if (isset($_GET['number']) && !empty($_GET['number'])) {
     }
 }
 
-//稳赚算法
-$mqz = 500;
-if (isset($_GET['mqz']) && $_GET['mqz']) {
-    $mqz = $_GET['mqz'];
-}
-
-$qs = 5;
-if (isset($_GET['qs']) && $_GET['qs']) {
-    $qs = $_GET['qs'];
-}
-
-$wenzhuan = Wenzhuantongji($da, $mqz, $qs);
-
 $data = [];
 foreach ($all as $nian => $list) {
 

@@ -114,24 +114,21 @@ function getFirstInfo($kj)
 
 /**
  * 每期稳赚算法
- * @param   $da     打奖号码
+ * @param   $ms     打奖号码
  * @param   $mqz    每期要赚
  * @param   $qs     连打期数
  * @param   $peilv  赔率
  */
-function Wenzhuantongji($da, $mqz = 300, $qs = 5, $peilv = 90)
+function Wenzhuantongji($ms = 40, $mqz = 300, $qs = 5, $peilv = 90)
 {
     $list = [];
-
-    //码组数
-    $mzs = count($da);
 
     $sunshi = 0;
     for ($i = 1; $i <= $qs; $i++) {
         //每码打奖组数
-        $djzs = ceil(($sunshi + $mqz) / ($peilv - $mzs));
+        $djzs = ceil(($sunshi + $mqz) / ($peilv - $ms));
         //花了的本
-        $ben = $djzs * $mzs;
+        $ben = $djzs * $ms;
         //损失
         $sunshi += $ben + $mqz;
 
