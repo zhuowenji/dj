@@ -32,10 +32,10 @@
         <nav>
             <ul class="nav nav-tabs">
                 <li>
-                  <a href="/">头尾神策首页</a>
+                  <a href="/">首页</a>
                 </li>
                 <li class="active">
-                  <a href="wx.php">神策微信群</a>
+                  <a href="wx.php">微信群</a>
                 </li>
             </ul>
         </nav>
