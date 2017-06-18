@@ -8,7 +8,7 @@
 <div class="container">
     <form method="get" action="liangen.php">
         <div class="form-group">
-            <label>连根码数</label>
+            <label>连跟码数</label>
             <input type="text" class="form-control" id="ms" name="ms" placeholder="40" value="<?php echo isset($_GET['ms']) && !empty($_GET['ms']) ? $_GET['ms'] : ''; ?>">
         </div>
         <div class="form-group">
