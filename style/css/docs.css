@@ -280,6 +280,7 @@ h4 code {
 /* Page headers */
 .bs-docs-header {
   margin-bottom: 20px;
+  padding-top:80px;
   font-size: 20px;
 }
 .bs-docs-header h1 {
@@ -297,9 +298,8 @@ h4 code {
 
 @media (min-width: 768px) {
   .bs-docs-header {
-    margin-top:30px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     font-size: 24px;
     text-align: left;
   }
