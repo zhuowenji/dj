@@ -23,8 +23,8 @@
   </head>
   <body>
         <!-- Docs master nav -->
-    <header class="navbar navbar-default bs-docs-nav" id="top">
-        <div class="container navbar-fixed-top">
+    <header class="navbar navbar-static-top  bs-docs-nav" id="top">
+        <div class="container">
             <div class="navbar-header ">
               <a href="../" class="navbar-brand">首页</a>
               <a href="wx.php" class="navbar-brand">微信群</a>
