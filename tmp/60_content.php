@@ -2,7 +2,7 @@
   <div class="container">
     <h1>推荐60组头尾</h1>
     <p>
-        <small>最近连续中奖9次</small>
+        <small>最近连续中9次</small>
     </p>
   </div>
 </div>

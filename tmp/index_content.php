@@ -33,13 +33,13 @@
         </tr>
     </table>
 
-    <h3><?php echo $year ?>年开奖记录</h3>
+    <h3><?php echo $year ?>年记录</h3>
     <table class="table table-bordered">
         <tr>
             <th>期数</th>
             <th>时间</th>
             <th>头-尾</th>
-            <th>大奖</th>
+            <th>大码</th>
         </tr>
         <?php foreach ($all[$year] as  $info) { ?>
             <tr>
