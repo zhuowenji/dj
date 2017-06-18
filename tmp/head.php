@@ -34,7 +34,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="/" class="navbar-brand">首页</a>
-              <a href="60.php" class="active navbar-brand">60组码</a>
+              <a href="60.php" class="active navbar-brand">60组</a>
               <a href="search.php" class="active navbar-brand">查码</a>
               <a href="wx.php" class="navbar-brand">微信群</a>
             </div>
