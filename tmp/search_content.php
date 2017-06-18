@@ -53,9 +53,9 @@
     <table class="table table-bordered">
         <tr>
             <th>年份时间</th>
-            <th>开奖次数</th>
-            <th>中奖次数</th>
-            <th>中奖概率</th>
+            <th>开码次数</th>
+            <th>中码次数</th>
+            <th>中码概率</th>
             <th>最大连续不中次数</th>
         </tr>
         <?php foreach ($data as $info) {?>
