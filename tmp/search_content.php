@@ -1,7 +1,8 @@
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
     <h1>输入头尾号码<small></small></h1>
-    <p>3头5,6头7 单组模式：3-5,6-7,头尾模式：36-57</p>
+    <p>3头5,6头7 单组模式：3-5,6-7</p>
+    <p>3头5,6头7 头尾模式：36-57</p>
   </div>
 </div>
 
