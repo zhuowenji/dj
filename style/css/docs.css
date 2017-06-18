@@ -298,8 +298,8 @@ h4 code {
 
 @media (min-width: 768px) {
   .bs-docs-header {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 80px;
+    padding-bottom: 50px;
     font-size: 24px;
     text-align: left;
   }
