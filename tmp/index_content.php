@@ -32,7 +32,7 @@
             <?php }?>
         </tr>
     </table>
-    
+
     <h3>输入头尾号码</h3>
     <h5><small>3头5,6头7 单组模式：3-5,6-7,头尾模式：36-57</small></h5>
     <form method="get" action="index.php">
@@ -130,4 +130,4 @@
         </tr>
         <?php }?>
     </table>
-</dev>
+</div>
