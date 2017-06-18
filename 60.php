@@ -6,8 +6,11 @@ include 'function.php';
 $mysqli = connect();
 $kj = getAll($mysqli);
 
+//推荐中取出前2期开过的
+$qian = array_splice($kj,0,3);
+
 //推荐号码
-$tuijian = tuijian($kj);
+$tuijian = tuijian($kj,$qian);
 
 $ex_tuijian = explode(',', $tuijian);
 $sixty = [];

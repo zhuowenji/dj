@@ -26,9 +26,20 @@ function trimall($str)
     return str_replace($qian, $hou, $str);
 }
 
-//推荐号码
-function tuijian($kj)
+/**
+*   推荐号码
+*   $kj 开的号码
+*   $qian2 去除前2期开过的
+*/ 
+function tuijian($kj, $qian)
 {
+    $qcq = [];
+    foreach ($qian as $key => $value) {
+        $tou   = substr($value['number'], 0, 1);
+        $wei   = substr($value['number'], 3, 1);
+        $qcq[] = $tou . '-' . $wei;
+    }
+
     $all = [];
     foreach ($kj as $key => $value) {
         $tou   = substr($value['number'], 0, 1);
@@ -37,9 +48,10 @@ function tuijian($kj)
     }
 
     $unique = array_unique($all);
+    $new_kj = array_diff($unique,$qcq);
 
     $count = [];
-    foreach ($unique as $unique_val) {
+    foreach ($new_kj as $unique_val) {
         $i = 0;
         foreach ($all as $value) {
             if ($unique_val == $value) {
@@ -52,7 +64,7 @@ function tuijian($kj)
     arsort($count);
     $str = [];
     foreach ($count as $key => $value) {
-        if ($value > 10) {
+        if ($value >= 9) {
             $str[] = $key;
         }
     }
