@@ -9,6 +9,8 @@
         头尾神策 fuxiben.com
     </title>
     <script type="text/javascript" src="style/js/function.js"></script>
+    <script type="text/javascript" src="style/js/jquery.js"></script>
+    <script type="text/javascript" src="style/js/bootstrap.js"></script>
     <link href="style/css/bootstrap.css" rel="stylesheet">
     <link href="style/css/docs.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -26,11 +28,24 @@
     <header class="navbar navbar-fixed-top  bs-docs-nav" id="top">
         <div class="container">
             <div class="navbar-header ">
+              <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
               <a href="/" class="navbar-brand">首页</a>
               <a href="60.php" class="active navbar-brand">60组码</a>
               <a href="search.php" class="active navbar-brand">查码</a>
               <!-- <a href="liangen.php" class="navbar-brand">连跟码</a> -->
               <a href="wx.php" class="navbar-brand">微群</a>
             </div>
+
+            <nav id="bs-navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="liangen.php" class="navbar-brand">连跟码</a>
+                </li>
+              </ul>
+            </nav>
         </div>
     </header>
