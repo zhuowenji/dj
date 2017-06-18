@@ -36,13 +36,12 @@
               <a href="/" class="navbar-brand">首页</a>
               <a href="60.php" class="active navbar-brand">60组码</a>
               <a href="search.php" class="active navbar-brand">查码</a>
-              <!-- <a href="liangen.php" class="navbar-brand">连跟码</a> -->
-              <a href="wx.php" class="navbar-brand">微群</a>
+              <a href="wx.php" class="navbar-brand">微信群</a>
             </div>
 
             <nav id="bs-navbar" class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <a href="liangen.php" class="navbar-brand"><li>连跟码</li></a>
+                <li class=""><a href="liangen.php" class="navbar-brand">连跟码</a></li>
               </ul>
             </nav>
         </div>
