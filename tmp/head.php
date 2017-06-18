@@ -42,9 +42,7 @@
 
             <nav id="bs-navbar" class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li>
-                  <a href="liangen.php" class="navbar-brand">连跟码</a>
-                </li>
+                <a href="liangen.php" class="navbar-brand"><li>连跟码</li></a>
               </ul>
             </nav>
         </div>
