@@ -155,4 +155,6 @@ function repeat($kj, $start, $stop, $year)
     return $res;
 }
 
-include 'html.php';
+include 'tmp/head.php';
+include 'tmp/index_content.php';
+include 'tmp/foot.php';
