@@ -44,7 +44,7 @@
             <?php foreach ($tj_new as $info) {?>
             <?php $kai = getInfo($info['period'], $mysqli);?>
             <tr class="<?php echo isset($win_tr_style[$info['win']]) ? $win_tr_style[$info['win']] : ''; ?>">
-                <td><?php echo $info['period']; ?></td>
+                <td><?php echo $kai['period'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 待开'; ?></td>
                 <th><?php echo $kai['time'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 待开'; ?></th>
                 <th><?php echo $kai['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 待开'; ?></th>
                 <td><?php echo $info['count']; ?></td>

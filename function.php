@@ -188,8 +188,9 @@ function getInfo($id, $mysqli)
 {
     $kai['number'] = '';
     $kai['time']   = '';
+    $kai['period'] = '';
 
-    $sql = 'select number,time from kaijiang where id = ' . $id;
+    $sql = 'select number,time,period from kaijiang where id = ' . $id;
     $res = $mysqli->query($sql);
     if ($res === false) {
         var_dump($mysqli->errno);
@@ -200,6 +201,7 @@ function getInfo($id, $mysqli)
         $data          = $res->fetch_array();
         $kai['number'] = substr($data['number'], 0, 1) . '-' . substr($data['number'], 3, 1);
         $kai['time']   = $data['time'];
+        $kai['period'] = $data['period'];
     }
 
     return $kai;
