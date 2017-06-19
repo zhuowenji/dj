@@ -1,22 +1,22 @@
 <?php
 
 //获取所有开奖
-function getAll($mysqli){
-	$sql    = 'select * from kaijiang order by id desc';
-	$res    = $mysqli->query($sql);
-	if ($res === false) {
-	    var_dump($mysqli->errno);
-	    var_dump($mysqli->error);
-	}
+function getAll($mysqli)
+{
+    $sql = 'select * from kaijiang order by id desc';
+    $res = $mysqli->query($sql);
+    if ($res === false) {
+        var_dump($mysqli->errno);
+        var_dump($mysqli->error);
+    }
 
-	$kj = [];
-	while ($data = $res->fetch_array()) {
-	    $kj[] = $data;
-	}
+    $kj = [];
+    while ($data = $res->fetch_array()) {
+        $kj[] = $data;
+    }
 
-	return $kj;
+    return $kj;
 }
-
 
 //此函数可以去掉空格，及换行。
 function trimall($str)
@@ -27,19 +27,12 @@ function trimall($str)
 }
 
 /**
-*   推荐号码
-*   $kj 开的号码
-*   $qian2 去除前2期开过的
-*/ 
+ *   推荐号码
+ *   $kj 开的号码
+ *   $qian2 去除前2期开过的
+ */
 function tuijian($kj, $qian)
 {
-    $qcq = [];
-    foreach ($qian as $key => $value) {
-        $tou   = substr($value['number'], 0, 1);
-        $wei   = substr($value['number'], 3, 1);
-        $qcq[] = $tou . '-' . $wei;
-    }
-
     $all = [];
     foreach ($kj as $key => $value) {
         $tou   = substr($value['number'], 0, 1);
@@ -47,8 +40,15 @@ function tuijian($kj, $qian)
         $all[] = $tou . '-' . $wei;
     }
 
+    $qcq = [];
+    foreach ($qian as $key => $value) {
+        $tou   = substr($value['number'], 0, 1);
+        $wei   = substr($value['number'], 3, 1);
+        $qcq[] = $tou . '-' . $wei;
+    }
+
     $unique = array_unique($all);
-    $new_kj = array_diff($unique,$qcq);
+    $new_kj = array_diff($unique, $qcq);
 
     $count = [];
     foreach ($new_kj as $unique_val) {
@@ -68,6 +68,9 @@ function tuijian($kj, $qian)
             $str[] = $key;
         }
     }
+
+    //统计个数
+    $number_count = (count($str));
 
     arsort($str);
     $tuijian = [];
@@ -89,7 +92,7 @@ function tuijian($kj, $qian)
         $tj .= $value . ',';
     }
 
-    return $tj;
+    return ['number' => $tj, 'number_count' => $number_count];
 }
 
 //取最新一期的号码，和上一次时间
@@ -179,4 +182,25 @@ function repeat($kj, $start, $stop, $year)
     }
 
     return $res;
+}
+
+function getInfo($id, $mysqli)
+{
+    $kai['number'] = '';
+    $kai['time']   = '';
+
+    $sql = 'select number,time from kaijiang where id = ' . $id;
+    $res = $mysqli->query($sql);
+    if ($res === false) {
+        var_dump($mysqli->errno);
+        var_dump($mysqli->error);
+    }
+
+    if ($mysqli->affected_rows) {
+        $data          = $res->fetch_array();
+        $kai['number'] = substr($data['number'], 0, 1) . '-' . substr($data['number'], 3, 1);
+        $kai['time']   = $data['time'];
+    }
+
+    return $kai;
 }

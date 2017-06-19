@@ -37,6 +37,7 @@ if (isset($_POST['number']) && !empty($_POST['number']) && is_numeric($_POST['nu
         echo $sql;
     } else {
         $msg = '添加成功';
+        include 'task/60_task.php';
     }
 }
 

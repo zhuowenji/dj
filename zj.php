@@ -1,67 +1,58 @@
 <?php
 
-//一年开奖 145次
-//利润 中奖：1比90赔率 以60组码每码打1组为例
+$arr = [
+    '6月' => [
+        '2017-6-19' => '-300',
+    ],
+];
 
-// 普通算法：
-// 总投资： 145 X 60 =  8700 元本
-// 回本：   8700 ／ 90 =  96    全年中96次回本
-// 回本占比：  96 ／ 145 = 66%  只需要60组码 66胜率即可回本
+?>
 
-//神策 60组码 2010-2016年胜率70% 以上，平均 71.4%
+<style type="text/css">
 
-// 60组码回报比例：
-// 145 X 71.4% = 104  一年可以中 104次
+tr { padding:20px;}
 
-// 利润：
-// 中奖次数 X 赔率 - （开奖次数 X 每次打奖金额）
-// 104 X 90 - （145 X 60 ） = 9360 - 8700 = 660 元
-//---------------------------------------------------
-// 神策投资本钱
-// 60 * 4 = 240  神策60组码对大连续不中4次
-// 利润 ／ 神策投资本钱 =  回报率
-// 660 ／ 240 = 275% 的回报率
+</style>
 
-// 神策 275% 的回报率计算
-// 每期打60  一年赚 660  （最大4期不中，第五期中，流动资金 300）
-// 每期打600 一年赚 6600 （最大4期不中，流动资金 3000）
-// 每期打6000 一年赚 6万6 （最大4期不中，流动资金 3万）
-// 每期打60000 一年赚 66万 （最大4期不中，流动资金 30万）
+<html>
+    <div class="container">
+        <div class="row">
+            <link href="style/css/bootstrap.css" rel="stylesheet">
+            <?php $zong = 0;?>
+            <?php foreach ($arr as $time => $info) {?>
+                <?php $count = array_sum($info);?>
+                <div class="col-md-3">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>场次</th>
+                            <th>时间</th>
+                            <th>成绩</th>
+                        </tr>
 
-//每期赚30
-$mqz = 300;
+                        <?php $a     = 0;?>
+                        <?php $sheng = 0;?>
 
-//码组数
-$mzs = 60;
+                        <?php foreach ($info as $key => $value) {?>
+                        <?php $a++;?>
+                        <tr>
+                            <td><?php echo $a; ?></td>
+                            <td><?php echo date('Y年m月d日', strtotime($key)); ?></td>
+                            <td><?php echo $value; ?></td>
+                        </tr>
+                        <?php $value > 0 ? $sheng++ : '';?>
+                        <?php }?>
+                        <tr>
+                            <td><?php echo $time; ?>总</td>
+                            <td colspan="2"><font color="red"><b><?php echo $count . ' - ' . number_format($sheng / $a * 100, 2, '.', '') . '%'; ?></b></font></td>
+                        </tr>
+                    </table>
+                </div>
+                <?php $zong += $count;?>
+            <?php }?>
+        </div>
 
-//赔率
-$peilv = 90;
-
-//期数
-$qs = 5;
-
-echo '每期稳赚300，跟码连打，连本带利赚回来投资列表<br/>';
-$sunshi = 0;
-for ($i = 1; $i <= $qs; $i++) {
-
-    //每码打奖组数
-    $djzs = ceil(($sunshi + $mqz) / ($peilv - $mzs));
-    //花了的本
-    $ben = $djzs * $mzs;
-    //损失
-    $sunshi += $ben + $mqz;
-    echo '第' . $i . '期' . $mzs . '个码,每码打' . $djzs . '组,赚（中奖钱' . $sunshi . '----打奖钱' . $ben . '）：' . ($sunshi - $ben) . '<br/>';
-
-}
-
-//上期本+上期赚 = 本期全部
-
-// 60 + 30 = 90 （上期本+上期要赚的30）
-// 30 + 90 = 120（本期要赚）
-
-// 固定没期赚30
-
-// 第一期 60组码  每码1组  本期本 60   赢：90 - 60 本 = 30 赚
-// 如果不中相当于损失：本+30（如果不中下期要： 60 + 30 = 90）
-
-// 第二期 60组码  每组4码  本期本 240  赢：360 - 240 本 = 120 赚 （上期要赚的 + 上期本 + 本期赚  ： 90 + 240 + 30）
+        <div class="col-md-12">
+                <h3><pre>总战绩：<?php echo $zong; ?></pre></h3>
+        </div>
+    </div>
+</html>

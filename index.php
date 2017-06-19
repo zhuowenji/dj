@@ -5,7 +5,7 @@ include 'function.php';
 
 //获取所有数据
 $mysqli = connect();
-$kj = getAll($mysqli);
+$kj     = getAll($mysqli);
 
 //取最新一期
 $first = getFirstInfo($kj);

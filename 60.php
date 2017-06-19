@@ -2,29 +2,41 @@
 include 'config.php';
 include 'function.php';
 
-//获取所有数据
 $mysqli = connect();
-$kj = getAll($mysqli);
-
-//推荐中取出前2期开过的
-$qian = array_splice($kj,0,3);
 
 //推荐号码
-$tuijian = tuijian($kj,$qian);
+$tj_sql = 'select * from tj order by id desc limit 10';
+$tj_res = $mysqli->query($tj_sql);
 
-$ex_tuijian = explode(',', $tuijian);
-$sixty = [];
+$tj_new = [];
+while ($info = $tj_res->fetch_array()) {
+    $tj_new[] = $info;
+}
+
+$tuijian    = current($tj_new);
+$ex_tuijian = explode(',', $tuijian['number']);
+$sixty      = [];
 foreach (array_filter($ex_tuijian) as $info) {
-	$num = explode('-', $info);
-	$sixty[$num[0]] = $num[1]; 
+    $num            = explode('-', $info);
+    $sixty[$num[0]] = $num[1];
 }
 
 $style = [
-	1 => 'info',
-	3 => 'success',
-	5 => 'warning',
-	7 => 'danger',
-	9 => 'active',
+    1 => 'info',
+    3 => 'success',
+    5 => 'warning',
+    7 => 'danger',
+    9 => 'active',
+];
+
+$win_style = [
+    1 => '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 中',
+    2 => '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 错',
+];
+
+$win_tr_style = [
+    1 => 'success',
+    2 => 'danger',
 ];
 
 include 'tmp/head.php';
