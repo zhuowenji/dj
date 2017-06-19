@@ -1,4 +1,6 @@
 <?php
+include '../config.php';
+include '../function.php';
 
 $mysqli = connect();
 
@@ -57,6 +59,7 @@ if ($mysqli->affected_rows) {
             var_dump($mysqli->errno);
             var_dump($mysqli->error);
         }
+        echo '更新成功';
     }
 }
 
