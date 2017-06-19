@@ -1,8 +1,5 @@
 <?php
 
-include '../config.php';
-include '../function.php';
-
 $mysqli = connect();
 
 //获取所有数据
