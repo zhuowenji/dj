@@ -10,10 +10,15 @@ $tj_res = $mysqli->query($tj_sql);
 
 $tj_new = [];
 while ($info = $tj_res->fetch_array()) {
-    $tj_new[] = $info;
+    $tj_new[$info['period']] = $info;
 }
 
-$tuijian    = current($tj_new);
+if (isset($_GET['tj']) && !empty($_GET['tj'])) {
+    $tuijian = $tj_new[$_GET['tj']];
+} else {
+    $tuijian = current($tj_new);
+}
+
 $ex_tuijian = explode(',', $tuijian['number']);
 $sixty      = [];
 foreach (array_filter($ex_tuijian) as $info) {
@@ -30,8 +35,8 @@ $style = [
 ];
 
 $win_style = [
-    1 => '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 中',
-    2 => '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 错',
+    1 => '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>',
+    2 => '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>',
 ];
 
 $win_tr_style = [
