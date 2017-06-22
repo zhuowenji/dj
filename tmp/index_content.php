@@ -33,7 +33,7 @@
         </tr>
     </table>
 
-    <h3><?php echo $year ?>年记录</h3>
+    <h3><?php echo $year; ?>年记录</h3>
     <table class="table table-bordered">
         <tr>
             <th>期数</th>
@@ -41,18 +41,18 @@
             <th>头-尾</th>
             <th>大码</th>
         </tr>
-        <?php foreach ($all[$year] as  $info) { ?>
+        <?php foreach ($all[$year] as $info) {?>
             <tr>
-                <td><?php echo $info['period'] ?></td>
-                <td><?php echo $info['time'] ?></td>
-                <td><?php echo substr($info['number'],0,1) .'-'.substr($info['number'], 3, 1); ?></td>
-                <td><?php echo substr($info['number'],0,4); ?></td>
+                <td><?php echo $info['period']; ?></td>
+                <td><?php echo $info['time']; ?></td>
+                <td><?php echo substr($info['number'], 0, 1) . '-' . substr($info['number'], 3, 1); ?></td>
+                <td><?php echo substr($info['number'], 0, 4); ?></td>
             </tr>
-        <?php } ?>
+        <?php }?>
 
     </table>
-    
-    <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
+
+<!--     <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
     <table class="table table-bordered">
         <tr>
             <th></th>
@@ -79,5 +79,5 @@
             <?php }?>
         </tr>
         <?php }?>
-    </table>
+    </table> -->
 </div>
