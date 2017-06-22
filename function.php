@@ -26,6 +26,12 @@ function trimall($str)
     return str_replace($qian, $hou, $str);
 }
 
+//把头字替换成-
+function trimTou($str)
+{
+    return str_replace('头', '-', $str);
+}
+
 /**
  *   推荐号码
  *   $kj 开的号码

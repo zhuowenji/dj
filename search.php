@@ -4,7 +4,7 @@ include 'function.php';
 
 //获取所有数据
 $mysqli = connect();
-$kj = getAll($mysqli);
+$kj     = getAll($mysqli);
 
 foreach ($kj as $key => $value) {
     $y         = date('Y', strtotime($value['time']));
@@ -14,7 +14,8 @@ foreach ($kj as $key => $value) {
 //搜索处理
 $da = ['3-5', '6-7'];
 if (isset($_GET['number']) && !empty($_GET['number'])) {
-    $number = trimall($_GET['number']);
+    $is_tou = trimTou($_GET['number']);
+    $number = trimall($is_tou);
     $da     = array_unique(array_filter(explode(',', $number)));
     $re     = [];
     foreach ($da as $value) {
@@ -92,10 +93,6 @@ foreach ($all as $nian => $list) {
     $data[$nian]['gailv']   = count($zhong) / count($list);
 }
 
-
 include 'tmp/head.php';
 include 'tmp/search_content.php';
 include 'tmp/foot.php';
-
-
-
