@@ -288,5 +288,5 @@ function runtime()
 {
     $time = (time() - strtotime('2017-5-25')) / 86400;
 
-    return cil($time);
+    return ceil($time);
 }
