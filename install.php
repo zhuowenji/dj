@@ -28,7 +28,7 @@ $new_period = $period + 1;
 
 if (isset($_POST['number']) && !empty($_POST['number']) && is_numeric($_POST['number'])) {
     $number = $_POST['number'];
-    $sql    = 'INSERT INTO `kaijiang` (`id`, `time`, `period`, `number`) VALUES (NULL, ' . "'" . $day . "'" . ", $new_period, $number)";
+    $sql    = 'INSERT INTO `kaijiang` (`id`, `time`, `period`, `number`) VALUES (1136, ' . "'" . $day . "'" . ", $new_period, $number)";
 
     if ($mysqli->query($sql) === false) {
         $msg = '添加失败';
