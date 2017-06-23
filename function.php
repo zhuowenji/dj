@@ -190,6 +190,7 @@ function repeat($kj, $start, $stop, $year)
     return $res;
 }
 
+// 获取单条开码记录
 function getInfo($id, $mysqli)
 {
     $kai['number'] = '';
@@ -211,4 +212,12 @@ function getInfo($id, $mysqli)
     }
 
     return $kai;
+}
+
+// 获取网站安全运行时间
+function runtime()
+{
+    $time = (time() - strtotime('2017-5-25')) / 86400;
+
+    return ceil($time);
 }
