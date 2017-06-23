@@ -5,7 +5,7 @@ include 'function.php';
 $mysqli = connect();
 
 //推荐号码
-$tj_sql = 'select * from tj where type = 60 order by id desc limit 10';
+$tj_sql = 'select * from tj where type = 40 order by id desc limit 10';
 $tj_res = $mysqli->query($tj_sql);
 
 $tj_new = [];
@@ -45,5 +45,5 @@ $win_tr_style = [
 ];
 
 include 'tmp/head.php';
-include 'tmp/60_content.php';
+include 'tmp/40_content.php';
 include 'tmp/foot.php';
