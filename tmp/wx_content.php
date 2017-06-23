@@ -6,5 +6,5 @@
 </div>
 
 <div class="container">
-	<img src="style/img/sc.jpg" class="img-responsive" alt="Responsive image" />
+	<img src="style/img/sc.jpeg" class="img-responsive" alt="Responsive image" />
 </div>
