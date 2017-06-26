@@ -14,6 +14,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     if ($mysqli->affected_rows) {
         $user                 = $res->fetch_array();
         $_SESSION['username'] = $user['username'];
+        echo '1111';die;
         header('Location: /houtai');
     }
 
