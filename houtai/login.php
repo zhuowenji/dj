@@ -12,9 +12,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $res = $mysqli->query($sql);
     if ($mysqli->affected_rows) {
-        $user                 = $res->fetch_array();
+        $user = $res->fetch_array();
+
+        session_start();
         $_SESSION['username'] = $user['username'];
-        echo '1111';die;
+
         header('Location: /houtai');
     }
 
