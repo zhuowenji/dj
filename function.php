@@ -70,7 +70,7 @@ function SixtyTuijian($kj, $qian)
     arsort($count);
     $str = [];
     foreach ($count as $key => $value) {
-        if ($value >= 9) {
+        if ($value > 9) {
             $str[] = $key;
         }
     }

@@ -8,11 +8,11 @@
     <title>
         头尾神策 fuxiben.com
     </title>
-    <script type="text/javascript" src="style/js/function.js"></script>
-    <script type="text/javascript" src="style/js/jquery.js"></script>
-    <script type="text/javascript" src="style/js/bootstrap.js"></script>
-    <link href="style/css/bootstrap.css" rel="stylesheet">
-    <link href="style/css/docs.css" rel="stylesheet">
+    <script type="text/javascript" src="/style/js/function.js"></script>
+    <script type="text/javascript" src="/style/js/jquery.js"></script>
+    <script type="text/javascript" src="/style/js/bootstrap.js"></script>
+    <link href="/style/css/bootstrap.css" rel="stylesheet">
+    <link href="/style/css/docs.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -34,15 +34,15 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="/" class="navbar-brand">首页</a>
-              <a href="60.php" class="active navbar-brand">60组</a>
-              <a href="search.php" class="active navbar-brand">查码</a>
-              <a href="wx.php" class="navbar-brand">微信群</a>
+              <a href="/60.php" class="active navbar-brand">60组</a>
+              <a href="/search.php" class="active navbar-brand">查码</a>
+              <a href="/wx.php" class="navbar-brand">微信群</a>
             </div>
 
             <nav id="bs-navbar" class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li class=""><a href="40.php" class="navbar-brand">40组(内测中)</a></li>
-                <li class=""><a href="liangen.php" class="navbar-brand">连跟码</a></li>
+                <li class=""><a href="/40.php" class="navbar-brand">40组(内测中)</a></li>
+                <li class=""><a href="/liangen.php" class="navbar-brand">连跟码</a></li>
               </ul>
             </nav>
         </div>
