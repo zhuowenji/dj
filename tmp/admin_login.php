@@ -15,7 +15,7 @@
         <input type="password" class="form-control" name="password" id="password" placeholder="Password" required="required">
       </div>
       <div class="form-group">
-        <label for="exampleInputFile"><?php echo $msg ?: ''; ?></label>
+        <label for="exampleInputFile"><font color="red"><?php echo $msg ?: ''; ?></font></label>
       </div>
       <button type="submit" class="btn btn-default">登 录</button>
     </form>
