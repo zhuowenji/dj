@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="七星彩,头尾,七星彩头尾,七星彩论坛,湛江头尾,头尾规律">
-    <meta name="description" content="海南湛江七星彩，头尾，头尾神策，60组神码，40组神码">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <title>
         头尾神策 fuxiben.com
     </title>
@@ -35,15 +35,13 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="/" class="navbar-brand">首页</a>
-              <a href="/60.php" class="active navbar-brand">60组</a>
-              <a href="/search.php" class="active navbar-brand">查码</a>
-              <a href="/wx.php" class="navbar-brand">微信群</a>
+              <a href="/houtai/install.php" class="active navbar-brand">录码</a>
             </div>
-            <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-              <ul class="nav navbar-nav">
-                <li><a href="/40.php" >40组(内测中)</a></li>
-                <li><a href="/liangen.php" >连跟码</a></li>
-              </ul>
+            <nav id="bs-navbar" class="collapse navbar-collapse" aria-expanded="false">
+                  <ul class="nav navbar-nav"></ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/houtai/index.php?logout=true">退出账号</a></li>
+                  </ul>
             </nav>
         </div>
     </header>

@@ -23,6 +23,5 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $msg = '用户名或者密码错误';
 }
 
-include '../tmp/head.php';
-include '../tmp/admin_login.php';
-include '../tmp/foot.php';
+include '../tmp/admin/head.php';
+include '../tmp/admin/login.php';

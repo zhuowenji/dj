@@ -1,7 +1,4 @@
 <?php
-// include '../config.php';
-// include '../function.php';
-
 $mysqli = connect();
 
 //获取所有数据
@@ -10,7 +7,7 @@ $kj_first = current($kj);
 $kj_id    = $kj_first['id'];
 
 //获取推荐的数据
-$tj_sql = 'select * from tj where type = 40 order by id desc limit 1';
+$tj_sql = 'select * from tj where type = 60 order by id desc limit 1';
 $tj_res = $mysqli->query($tj_sql);
 if ($mysqli->affected_rows) {
 
@@ -58,17 +55,19 @@ if ($mysqli->affected_rows) {
         if ($tj_up === false) {
             var_dump($mysqli->errno);
             var_dump($mysqli->error);
+            $msg .= '60码更新失败、';
+            die;
         }
-        echo '40组码更新成功';
+        $msg .= '60码更新成功、';
     }
 }
 
 //推荐号码
 $qian       = array_splice($kj, 0, 3);
-$tuijian    = FortyTuijian($kj, $qian);
+$tuijian    = SixtyTuijian($kj, $qian);
 $new_period = $kj_id + 1;
 
-$tj_install = 'INSERT INTO `tj` (`number`, `type`, `count`, `period`, `win`, `create_time`) VALUES ("' . $tuijian['number'] . '", ' . '40,' . $tuijian['number_count'] . ', ' . $new_period . ', NULL, ' . time() . ');';
+$tj_install = 'INSERT INTO `tj` (`number`, `type`, `count`, `period`, `win`, `create_time`) VALUES ("' . $tuijian['number'] . '", ' . '60,' . $tuijian['number_count'] . ', ' . $new_period . ', NULL, ' . time() . ');';
 $install    = $mysqli->query($tj_install);
 if ($install === false) {
     var_dump($mysqli->errno);

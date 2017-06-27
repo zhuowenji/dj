@@ -2,10 +2,11 @@
 include '../config.php';
 include '../function.php';
 
-include 'common.php';
+include 'base.php';
 
-adminCheckLogin();
+if (isset($_GET['logout']) && $_GET['logout'] == true) {
+    LogOut();
+}
 
-include '../tmp/head.php';
-include '../tmp/admin_content.php';
-include '../tmp/foot.php';
+include '../tmp/admin/head.php';
+include '../tmp/admin/index_content.php';
