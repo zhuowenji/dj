@@ -35,13 +35,17 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="/" class="navbar-brand">首页</a>
+              <?php if (isset($_SESSION['username'])) {?>
               <a href="/houtai/install.php" class="active navbar-brand">录码</a>
+              <?php }?>
             </div>
+            <?php if (isset($_SESSION['username'])) {?>
             <nav id="bs-navbar" class="collapse navbar-collapse" aria-expanded="false">
                   <ul class="nav navbar-nav"></ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="/houtai/index.php?logout=true">退出账号</a></li>
                   </ul>
             </nav>
+            <?php }?>
         </div>
     </header>
