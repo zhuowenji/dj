@@ -53,7 +53,7 @@ if ($mysqli->affected_rows) {
             $win = 2; //不中
         }
 
-        $up_sql = 'UPDATE `tj` SET `win` = ' . $win . ' WHERE `period` = ' . $tj['period'] . ';';
+        $up_sql = 'UPDATE `tj` SET `win` = ' . $win . ' WHERE  type = 40 AND `period` = ' . $tj['period'] . ';';
         $tj_up  = $mysqli->query($up_sql);
         if ($tj_up === false) {
             var_dump($mysqli->errno);
