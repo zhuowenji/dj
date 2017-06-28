@@ -20,8 +20,8 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/style/img/fuxiben.ico">
+    <link rel="icon" href="/style/img/fuxiben.ico">
   </head>
 
   <body>
@@ -34,9 +34,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="/" class="navbar-brand">首页</a>
+              <a href="/houtai" class="navbar-brand">后台首页</a>
               <?php if (isset($_SESSION['username'])) {?>
               <a href="/houtai/install.php" class="active navbar-brand">录码</a>
+              <a href="/houtai/erweima.php" class="active navbar-brand">二维码</a>
               <?php }?>
             </div>
             <?php if (isset($_SESSION['username'])) {?>

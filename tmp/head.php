@@ -20,8 +20,8 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/style/img/fuxiben.ico">
+    <link rel="icon" href="/style/img/fuxiben.ico">
   </head>
 
   <body>
