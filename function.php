@@ -234,7 +234,7 @@ function beiTou($ms = 60, $mqz = 300, $qs = 3, $peilv = 90)
     $list['qs']  = $qs;
     $list['ztz'] = $ztz;
     $list['zz']  = ($qs + 1) * $mqz;
-    $list['sl']  = round(1 / ($qs + 1) * 100, 4) . '%';
+    $list['sl']  = round(1 / ($qs + 1) * 100, 2) . '%';
 
     return $list;
 }
@@ -301,7 +301,7 @@ function lianGen($ms = 60, $mqz = 300, $qs = 3, $peilv = 90)
     $list['zqs'] = $zqs;
     $list['zz']  = $zqs * $mqz;
     $list['ztz'] = $one + $two + $after + $sy_je;
-    $list['sl']  = round(($zqs - $qs) / $zqs * 100, 4) . '%';
+    $list['sl']  = round(($zqs - $qs) / $zqs * 100, 2) . '%';
 
     return $list;
 }
