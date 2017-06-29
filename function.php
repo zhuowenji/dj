@@ -301,7 +301,7 @@ function lianGen($ms = 60, $mqz = 300, $qs = 3, $peilv = 90)
     $list['zqs'] = $zqs;
     $list['zz']  = $zqs * $mqz;
     $list['ztz'] = $one + $two + $after + $sy_je;
-    $list['sl']  = round(($zqs - $qs) / $zqs, 4) . '%';
+    $list['sl']  = round(($zqs - $qs) / $zqs * 100, 4) . '%';
 
     return $list;
 }
