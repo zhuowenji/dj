@@ -209,11 +209,11 @@ function getFirstInfo($kj)
  * @param   $qs     连打期数
  * @param   $peilv  赔率
  */
-function BeiTou($ms = 40, $mqz = 300, $qs = 5, $peilv = 90)
+function beiTou($ms = 60, $mqz = 300, $qs = 3, $peilv = 90)
 {
-    $list = [];
-
+    $list   = [];
     $sunshi = 0;
+    $ztz    = 0;
     for ($i = 1; $i <= $qs + 1; $i++) {
         //每码打奖组数
         $djzs = ceil(($sunshi + $mqz) / ($peilv - $ms));
@@ -222,12 +222,86 @@ function BeiTou($ms = 40, $mqz = 300, $qs = 5, $peilv = 90)
         //损失
         $sunshi += $ben + $mqz;
 
-        $list[$i]['djzs']   = $djzs;
-        $list[$i]['qishu']  = $i;
-        $list[$i]['sunshi'] = $sunshi;
-        $list[$i]['ben']    = $ben;
-        $list[$i]['zhuan']  = $sunshi - $ben;
+        $list['info'][$i]['djzs']   = $djzs;
+        $list['info'][$i]['qishu']  = $i;
+        $list['info'][$i]['sunshi'] = $sunshi;
+        $list['info'][$i]['ben']    = $ben;
+        $list['info'][$i]['zhuan']  = $sunshi - $ben;
+
+        $ztz += $ben;
     }
+
+    $list['qs']  = $qs;
+    $list['ztz'] = $ztz;
+    $list['zz']  = ($qs + 1) * $mqz;
+    $list['sl']  = round(1 / ($qs + 1) * 100, 4) . '%';
+
+    return $list;
+}
+
+/**
+ * 每期不倍投稳赚算法
+ * @param   $ms     打奖号码
+ * @param   $mqz    每期要赚
+ * @param   $qs     连打期数
+ * @param   $peilv  赔率
+ */
+function lianGen($ms = 60, $mqz = 300, $qs = 3, $peilv = 90)
+{
+    //第一期
+    $one = ceil($mqz / ($peilv - $ms)) * $ms;
+
+    //第二期
+    $two = $one * 2;
+
+    //之后
+    $after = $two * 2;
+
+    //除了第一期之后还多少期没中
+    $hai = $qs - 2;
+
+    //剩余不中金额
+    $sy_je = $hai * $after;
+
+    //加上需要赚的
+    $kui = $one + $two + $sy_je + ($qs * $mqz);
+
+    //后面每期赚多少
+    $mq_zhuan = $after / $ms * $peilv - $after;
+
+    //算出需要多少期持平之前的损失
+    $qs_bu = ceil($kui / ($mq_zhuan - $mqz));
+
+    //总期数
+    $zqs = $qs + $qs_bu;
+
+    $list = [];
+    for ($i = 1; $i <= $zqs; $i++) {
+
+        $list['info'][$i]['qs'] = $i;
+        if ($i == 1) {
+            $list['info'][$i]['da']      = $one;
+            $list['info'][$i]['mmzs']    = $one / $ms;
+            $list['info'][$i]['zhongde'] = $one / $ms * $peilv;
+            $list['info'][$i]['zhuan']   = $mqz;
+        } elseif ($i == 2) {
+            $list['info'][$i]['da']      = $two;
+            $list['info'][$i]['mmzs']    = $two / $ms;
+            $list['info'][$i]['zhongde'] = $two / $ms * $peilv;
+            $list['info'][$i]['zhuan']   = $mqz * 2;
+        } else {
+            $list['info'][$i]['da']      = $after;
+            $list['info'][$i]['mmzs']    = $after / $ms;
+            $list['info'][$i]['zhongde'] = $after / $ms * $peilv;
+            $list['info'][$i]['zhuan']   = $mq_zhuan;
+        }
+    }
+
+    $list['qs']  = $qs;
+    $list['zqs'] = $zqs;
+    $list['zz']  = $zqs * $mqz;
+    $list['ztz'] = $one + $two + $after + $sy_je;
+    $list['sl']  = round(($zqs - $qs) / $zqs, 4) . '%';
 
     return $list;
 }
