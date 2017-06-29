@@ -16,7 +16,7 @@
             <input type="text" class="form-control" id="mqz" name="mqz" placeholder="500" value="<?php echo isset($_GET['mqz']) && !empty($_GET['mqz']) ? $_GET['mqz'] : ''; ?>">
         </div>
         <div class="form-group">
-            <label>连打多少期</label>
+            <label>连续不中期数</label>
             <input type="text" class="form-control" id="qs" name="qs" placeholder="5" value="<?php echo isset($_GET['qs']) && !empty($_GET['qs']) ? $_GET['qs'] : ''; ?>">
         </div>
         <button type="submit" class="btn btn-default">查询</button>
@@ -26,7 +26,7 @@
     <h3>查询结果</h3>
     <table class="table table-bordered">
         <tr>
-            <th>连跟期数(期)</th>
+            <th>需要连跟期数</th>
             <th>每码需打(组)</th>
             <th>中了得到</th>
             <th>需投资(本)</th>

@@ -203,18 +203,18 @@ function getFirstInfo($kj)
 }
 
 /**
- * 每期稳赚算法
+ * 每期倍投稳赚算法
  * @param   $ms     打奖号码
  * @param   $mqz    每期要赚
  * @param   $qs     连打期数
  * @param   $peilv  赔率
  */
-function Wenzhuantongji($ms = 40, $mqz = 300, $qs = 5, $peilv = 90)
+function BeiTou($ms = 40, $mqz = 300, $qs = 5, $peilv = 90)
 {
     $list = [];
 
     $sunshi = 0;
-    for ($i = 1; $i <= $qs; $i++) {
+    for ($i = 1; $i <= $qs + 1; $i++) {
         //每码打奖组数
         $djzs = ceil(($sunshi + $mqz) / ($peilv - $ms));
         //花了的本

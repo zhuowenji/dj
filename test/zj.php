@@ -4,6 +4,8 @@ $arr = [
     '6月' => [
         '2017-6-18' => '-300',
         '2017-6-20' => '435',
+        '2017-6-23' => '187',
+        '2017-6-26' => '160',
     ],
 ];
 
@@ -18,7 +20,7 @@ tr { padding:20px;}
 <html>
     <div class="container">
         <div class="row">
-            <link href="style/css/bootstrap.css" rel="stylesheet">
+            <link href="../style/css/bootstrap.css" rel="stylesheet">
             <?php $zong = 0;?>
             <?php foreach ($arr as $time => $info) {?>
                 <?php $count = array_sum($info);?>
