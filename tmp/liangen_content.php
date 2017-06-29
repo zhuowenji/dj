@@ -95,7 +95,7 @@
                 <font color="red">
                     总投资需：<?php echo $liangen['ztz']; ?>，
                     赚：<?php echo $liangen['zz']; ?>，
-                    胜率：<?php echo $liangen['sl']; ?>%即可。
+                    胜率：<?php echo $liangen['sl']; ?>即可。
                 </font>
             </td>
         </tr>
