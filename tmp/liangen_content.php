@@ -28,7 +28,7 @@
     </form>
 
     <h4>倍投方案</h4>
-    <p><blockquote>连续<?php echo $wenzhuan['qs']; ?>期不中,需要打第<?php echo $wenzhuan['qs'] + 1; ?>期。</blockquote></p>
+    <p><blockquote><?php echo $wenzhuan['qs'] > 1 ? '连续' . $wenzhuan['qs'] : $wenzhuan['qs']; ?>期不中,需要打第<?php echo $wenzhuan['qs'] + 1; ?>期。</blockquote></p>
     <table class="table table-bordered">
         <tr>
             <th>期数</th>
@@ -65,7 +65,7 @@
     </table>
 
     <h4>最高翻倍2次方案</h4>
-    <p><blockquote>连续<?php echo $liangen['qs']; ?>期不中,需连续中<?php echo $liangen['zqs'] - $liangen['qs']; ?>期，共<?php echo $liangen['zqs']; ?>期。</blockquote></p>
+    <p><blockquote><?php echo $liangen['qs'] > 1 ? '连续' . $liangen['qs'] : $liangen['qs']; ?>期不中,需连续中<?php echo $liangen['zqs'] - $liangen['qs']; ?>期，共<?php echo $liangen['zqs']; ?>期。</blockquote></p>
     <table class="table table-bordered">
         <tr>
             <th>期数</th>
