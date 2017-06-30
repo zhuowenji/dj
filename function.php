@@ -254,20 +254,29 @@ function lianGen($ms = 60, $mqz = 300, $qs = 3, $peilv = 90)
     //第二期
     $two = $one * 2;
 
-    //之后
-    $after = $two * 2;
+    if ($qs > 1) {
+        //之后
+        $after = $two * 2;
 
-    //除了第一期之后还多少期没中
-    $hai = $qs - 2;
+        //除了第一期之后还多少期没中
+        $hai = $qs - 2;
 
-    //剩余不中金额
-    $sy_je = $hai * $after;
+        //剩余不中金额
+        $sy_je = $hai * $after;
 
-    //加上需要赚的
-    $kui = $one + $two + $sy_je + ($qs * $mqz);
+        //加上需要赚的
+        $kui = $one + $two + $sy_je + ($qs * $mqz);
 
-    //后面每期赚多少
-    $mq_zhuan = $after / $ms * $peilv - $after;
+        //后面每期赚多少
+        $mq_zhuan = $after / $ms * $peilv - $after;
+
+    } else {
+
+        $sy_je    = 0;
+        $after    = 0;
+        $kui      = $one + ($qs * $mqz);
+        $mq_zhuan = $two / $ms * $peilv - $two;
+    }
 
     //算出需要多少期持平之前的损失
     $qs_bu = ceil($kui / ($mq_zhuan - $mqz));
@@ -284,7 +293,7 @@ function lianGen($ms = 60, $mqz = 300, $qs = 3, $peilv = 90)
             $list['info'][$i]['mmzs']    = $one / $ms;
             $list['info'][$i]['zhongde'] = $one / $ms * $peilv;
             $list['info'][$i]['zhuan']   = $mqz;
-        } elseif ($i == 2) {
+        } elseif ($i == 2 || $qs == 1) {
             $list['info'][$i]['da']      = $two;
             $list['info'][$i]['mmzs']    = $two / $ms;
             $list['info'][$i]['zhongde'] = $two / $ms * $peilv;
