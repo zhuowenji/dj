@@ -41,7 +41,8 @@
     </div>
 
     <h3>
-        最近10期命中情况
+        <small>最近10期</small>
+        <?php echo $win; ?> 胜 <?php echo $loss; ?> 负
     </h3>
     <div class="table-responsive">
         <table class="table">

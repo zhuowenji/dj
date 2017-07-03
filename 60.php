@@ -5,11 +5,25 @@ include 'function.php';
 $mysqli = connect();
 
 //推荐号码
-$tj_sql = 'select * from tj where type = 60 order by id desc limit 10';
+$tj_sql = 'select * from tj where type = 60 order by id desc limit 11';
 $tj_res = $mysqli->query($tj_sql);
 
+//获取最新一期推荐
 $tj_new = [];
+
+//获取胜负
+$win  = 0;
+$loss = 0;
 while ($info = $tj_res->fetch_array()) {
+
+    if ($info['win'] == 1) {
+        $win++;
+    }
+
+    if ($info['win'] == 2) {
+        $loss++;
+    }
+
     $tj_new[$info['period']] = $info;
 }
 
