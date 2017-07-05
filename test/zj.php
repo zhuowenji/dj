@@ -3,16 +3,16 @@
 include '../function.php';
 
 $arr = [
+    '7月' => [
+        '2017-7-02' => '-600',
+        '2017-7-04' => '-600',
+    ],
     '6月' => [
         '2017-6-18' => '-300',
         '2017-6-20' => '435',
         '2017-6-23' => '187',
         '2017-6-26' => '160',
         '2017-6-30' => '-380',
-    ],
-    '7月' => [
-        '2017-7-02' => '-600',
-        '2017-7-04' => '-600',
     ],
 ];
 
@@ -22,15 +22,13 @@ include '../tmp/head.php';
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
         <h1>
-        个人战绩
-        <p><small>不怕输，只怕奖无开</small></p>
+        战绩
         </h1>
   </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <link href="../style/css/bootstrap.css" rel="stylesheet">
         <?php $zong = 0;?>
         <?php foreach ($arr as $time => $info) {?>
             <?php $count = array_sum($info);?>
