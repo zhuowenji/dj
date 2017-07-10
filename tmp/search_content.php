@@ -13,9 +13,6 @@
         <button type="submit" class="btn btn-default">查询</button>
         <button type="button" onclick="ClearTextArea()" class="btn btn-default">清除</button>
     </form> -->
-
-    <h3>查询结果 <small><?php echo count($da); ?> 组头尾</small></h3>
-
     <?php if (count($da) > 0) {?>
         <div class="bs-callout bs-callout-danger" id="callout-tables-striped-ie8">
             <p><?php echo implode(',', $da); ?></p>
@@ -25,6 +22,7 @@
             <h4>查询输入有误,请重新输入</h4>
         </div>
     <?php }?>
+    <h4>查询结果 <small><?php echo count($da); ?> 组头尾</small></h4>
 
     <table class="table table-bordered">
         <tr>
