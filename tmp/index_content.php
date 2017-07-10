@@ -51,10 +51,9 @@
                 <td><?php echo substr($info['number'], 0, 4); ?></td>
             </tr>
         <?php }?>
-
     </table>
 
-    <h3> 近5年头尾各重复出现次数 </h3>
+<!--     <h3> 近5年头尾各重复出现次数 </h3>
     <table class="table table-bordered">
         <tr>
             <th></th>
@@ -80,6 +79,6 @@
             </td>
         </tr>
         <?php }?>
-    </table>
+    </table> -->
 
 </div>

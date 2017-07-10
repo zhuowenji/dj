@@ -39,8 +39,7 @@
             <td><?php echo $info['zhong']; ?></td>
             <td><?php echo sprintf('%.2f', $info['gailv'] * 100); ?>%</td>
             <td>
-                <?php echo $info['buzhong']; ?><br/>
-                时间： <?php echo $info['bzsj']; ?><br/>
+                <?php echo $info['buzhong']; ?> <?php echo $info['bzsj']; ?><br/>
                 <?php echo $info['ljlxbz'] > 1 ? "连续 {$info['buzhong']} 期不中出现过 {$info['ljlxbz']} 次数" : ''; ?>
             </td>
         </tr>
