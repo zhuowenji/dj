@@ -52,32 +52,32 @@
 
     </table>
 
-    <h3> 近5年头尾各重复出现次数、比例(占比超全年10%以上标红) </h3>
+    <h3> 近5年头尾各重复出现次数 </h3>
     <table class="table table-bordered">
         <tr>
             <th></th>
-            <?php for ($i = 2013; $i <= $year; $i++) {?>
-            <th><?php echo $i; ?></th>
-            <?php }?>
+            <th>年份／头次数</th>
+            <th>年份／尾次数</th>
         </tr>
         <?php for ($i = 0; $i <= 9; $i++) {?>
         <tr>
-            <td><?php echo $i; ?>(头,尾)</td>
-            <?php for ($start_year = 2013; $start_year <= $year; $start_year++) {?>
+            <td><?php echo $i; ?></td>
             <td>
-                <?php $tou       = $year_tou[$start_year][$i];?>
-                <?php $tou_gailv = sprintf('%.2f', $tou / $year_tou[$start_year]['count'] * 100);?>
-
-                <?php echo $tou_gailv > 10 ? '<font color="red">' . $tou . '-' . $tou_gailv . '%</font>' : $tou . '-' . $tou_gailv . '%'; ?>
-                <br/>
-                <?php $wei       = $year_wei[$start_year][$i];?>
-                <?php $wei_gailv = sprintf('%.2f', $wei / $year_tou[$start_year]['count'] * 100);?>
-
-               <?php echo $wei_gailv > 10 ? '<font color="red">' . $wei . '-' . $wei_gailv . '%</font>' : $wei . '-' . $wei_gailv . '%'; ?>
-                <br/>
+                <?php for ($start_year = 2013; $start_year <= $year; $start_year++) {?>
+                    <?php $tou = $year_tou[$start_year][$i];?>
+                    <?php echo $start_year . '／' . $tou; ?>
+                    <br/>
+                <?php }?>
             </td>
-            <?php }?>
+            <td>
+                <?php for ($start_year = 2013; $start_year <= $year; $start_year++) {?>
+                    <?php $wei = $year_wei[$start_year][$i];?>
+                    <?php echo $start_year . '／' . $wei; ?>
+                    <br/>
+                <?php }?>
+            </td>
         </tr>
         <?php }?>
     </table>
+
 </div>
