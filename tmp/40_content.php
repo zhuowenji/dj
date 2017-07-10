@@ -1,6 +1,5 @@
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
-
     <h1>
         <?php echo $tuijian['count']; ?>组头尾
         <small><?php echo isset($win_style[$tuijian['win']]) ? $win_style[$tuijian['win']] : '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></small>

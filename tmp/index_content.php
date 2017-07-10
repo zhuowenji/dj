@@ -8,30 +8,32 @@
 </div>
 
 <div class="container">
-    <h3>头尾连续不开期数 <small>0表示本期开 未表示今年未开过</small></h3>
-    <table class="table table-bordered">
-        <th></th>
-        <?php for ($i = 0; $i <= 9; $i++) {?>
-        <th><?php echo $i; ?></th>
-        <?php }?>
-
-        <tr>
-            <td>头</td>
+    <div class="bs-callout bs-callout-info" id="callout-tables-striped-ie8">
+        <h4>头尾连续不开期数</h4>
+        <p>0表示本期开 未表示今年未开过</p>
+    </div>
+        <table class="table table-bordered">
+            <th></th>
             <?php for ($i = 0; $i <= 9; $i++) {?>
-                <?php $tou_wz = strpos($year_tou[$year]['number'], (string) $i);?>
-                <?php $tou_mk = $tou_wz === false ? '未' : $tou_wz;?>
-                <td><?php echo ($tou_mk === '未' || $tou_mk > 4) ? '<font color="red">' . $tou_mk . '</font>' : $tou_mk; ?></td>
+            <th><?php echo $i; ?></th>
             <?php }?>
-        </tr>
-        <tr>
-            <td>尾</td>
-            <?php for ($i = 0; $i <= 9; $i++) {?>
-                <?php $wei_wz = strpos($year_wei[$year]['number'], (string) $i);?>
-                <?php $wei_mk = $wei_wz === false ? '未' : $wei_wz;?>
-                <td><?php echo ($wei_mk === '未' || $wei_mk > 4) ? '<font color="red">' . $wei_mk . '</font>' : $wei_mk; ?></td>
-            <?php }?>
-        </tr>
-    </table>
+            <tr>
+                <td>头</td>
+                <?php for ($i = 0; $i <= 9; $i++) {?>
+                    <?php $tou_wz = strpos($year_tou[$year]['number'], (string) $i);?>
+                    <?php $tou_mk = $tou_wz === false ? '未' : $tou_wz;?>
+                    <td><?php echo ($tou_mk === '未' || $tou_mk > 4) ? '<font color="red">' . $tou_mk . '</font>' : $tou_mk; ?></td>
+                <?php }?>
+            </tr>
+            <tr>
+                <td>尾</td>
+                <?php for ($i = 0; $i <= 9; $i++) {?>
+                    <?php $wei_wz = strpos($year_wei[$year]['number'], (string) $i);?>
+                    <?php $wei_mk = $wei_wz === false ? '未' : $wei_wz;?>
+                    <td><?php echo ($wei_mk === '未' || $wei_mk > 4) ? '<font color="red">' . $wei_mk . '</font>' : $wei_mk; ?></td>
+                <?php }?>
+            </tr>
+        </table>
 
     <h3><?php echo $year; ?>年记录</h3>
     <table class="table table-bordered">

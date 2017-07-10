@@ -27,9 +27,8 @@
             <input type="text" class="form-control" id="qs" name="qs" placeholder="3" value="<?php echo isset($_GET['qs']) && !empty($_GET['qs']) ? $_GET['qs'] : ''; ?>">
         </div>
         <button type="submit" class="btn btn-default">查询</button>
-        <button type="button" onclick="ClearTextArea()" class="btn btn-default">清除</button>
     </form>
-
+    <p></p>
     <div class="bs-callout bs-callout-danger" id="callout-type-dl-truncate">
         <h4>倍投方案</h4>
         <p><?php echo $wenzhuan['qs'] > 1 ? '连续' . $wenzhuan['qs'] : $wenzhuan['qs']; ?>期不中,需要打第<?php echo $wenzhuan['qs'] + 1; ?>期。</p>
