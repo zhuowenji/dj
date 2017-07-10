@@ -40,8 +40,8 @@
     </div>
 
     <h3>
-        <small>最近10期</small>
         <?php echo $win; ?> 胜 <?php echo $loss; ?> 负
+        <small>查看更多</small>
     </h3>
     <div class="table-responsive">
         <table class="table">
@@ -52,6 +52,7 @@
                 <th>码组数</th>
                 <th>结果</th>
             </tr>
+            <?php $tj_new = array_slice($tj_new, 0, 11);?>
             <?php foreach ($tj_new as $info) {?>
             <?php $kai = getInfo($info['period'], $mysqli);?>
             <tr class="<?php echo isset($win_tr_style[$info['win']]) ? $win_tr_style[$info['win']] : ''; ?>">

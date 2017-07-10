@@ -5,7 +5,7 @@ include 'function.php';
 $mysqli = connect();
 
 //推荐号码
-$tj_sql = 'select * from tj where type = 40 order by id desc limit 11';
+$tj_sql = 'select * from tj where type = 40 order by id desc';
 $tj_res = $mysqli->query($tj_sql);
 
 //获取最新一期推荐
