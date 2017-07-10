@@ -40,7 +40,7 @@
     </div>
 
     <h3>
-        <?php echo $win; ?> 胜 <?php echo $loss; ?> 负
+        <?php echo $win; ?>胜<?php echo $loss; ?>负
         <small>查看更多</small>
     </h3>
     <div class="table-responsive">
