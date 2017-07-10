@@ -17,9 +17,13 @@
     <h3>查询结果 <small><?php echo count($da); ?> 组头尾</small></h3>
 
     <?php if (count($da) > 0) {?>
-    <blockquote><p><?php echo implode(',', $da); ?></p></blockquote>
+        <div class="bs-callout bs-callout-danger" id="callout-tables-striped-ie8">
+            <p><?php echo implode(',', $da); ?></p>
+        </div>
     <?php } else {?>
-    <blockquote><font color="red">查询输入有误,请重新输入</font></blockquote>
+        <div class="bs-callout bs-callout-danger" id="callout-tables-striped-ie8">
+            <h4>查询输入有误,请重新输入</h4>
+        </div>
     <?php }?>
 
     <table class="table table-bordered">

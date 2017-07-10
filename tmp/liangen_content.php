@@ -6,6 +6,9 @@
 </div>
 
 <div class="container">
+    <div class="bs-callout bs-callout-danger" id="callout-type-dl-truncate">
+        <h4>倍投方案、最高翻倍2次方案</h4>
+    </div>
     <form method="get" action="liangen.php">
         <div class="form-group">
             <label>连跟码数</label>
@@ -27,8 +30,10 @@
         <button type="button" onclick="ClearTextArea()" class="btn btn-default">清除</button>
     </form>
 
-    <h4>倍投方案</h4>
-    <p><blockquote><?php echo $wenzhuan['qs'] > 1 ? '连续' . $wenzhuan['qs'] : $wenzhuan['qs']; ?>期不中,需要打第<?php echo $wenzhuan['qs'] + 1; ?>期。</blockquote></p>
+    <div class="bs-callout bs-callout-danger" id="callout-type-dl-truncate">
+        <h4>倍投方案</h4>
+        <p><?php echo $wenzhuan['qs'] > 1 ? '连续' . $wenzhuan['qs'] : $wenzhuan['qs']; ?>期不中,需要打第<?php echo $wenzhuan['qs'] + 1; ?>期。</p>
+    </div>
     <table class="table table-bordered">
         <tr>
             <th>期数</th>
@@ -64,8 +69,10 @@
         </tr>
     </table>
 
+    <div class="bs-callout bs-callout-danger" id="callout-type-dl-truncate">
     <h4>最高翻倍2次方案</h4>
-    <p><blockquote><?php echo $liangen['qs'] > 1 ? '连续' . $liangen['qs'] : $liangen['qs']; ?>期不中,需连续中<?php echo $liangen['zqs'] - $liangen['qs']; ?>期，共<?php echo $liangen['zqs']; ?>期。</blockquote></p>
+    <p><?php echo $liangen['qs'] > 1 ? '连续' . $liangen['qs'] : $liangen['qs']; ?>期不中,需连续中<?php echo $liangen['zqs'] - $liangen['qs']; ?>期，共<?php echo $liangen['zqs']; ?>期。</p>
+    </div>
     <table class="table table-bordered">
         <tr>
             <th>期数</th>

@@ -18,10 +18,10 @@
   </div>
 </div>
 <div class="container">
-    <blockquote><p id="fz"><?php echo $tuijian['number']; ?></p></blockquote>
-    <h3>
-        <small><a href="search.php?number=<?php echo $tuijian['number']; ?>">点此查看概率</a></small>
-    </h3>
+    <div class="bs-callout bs-callout-danger" id="callout-tables-striped-ie8">
+        <h4><a href="search.php?number=<?php echo $tuijian['number']; ?>">点此查看概率</a></h4>
+        <p id="fz"><?php echo $tuijian['number']; ?></p>
+    </div>
 
     <div class="table-responsive">
         <table class="table">
