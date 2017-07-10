@@ -26,11 +26,11 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>年份时间</th>
-            <th>开码次数</th>
-            <th>中码次数</th>
-            <th>中码概率</th>
-            <th>最大连续不中次数</th>
+            <th>年份</th>
+            <th>开次数</th>
+            <th>中次数</th>
+            <th>概率</th>
+            <th>最大连续不中</th>
         </tr>
         <?php foreach ($data as $info) {?>
         <tr>
@@ -39,8 +39,9 @@
             <td><?php echo $info['zhong']; ?></td>
             <td><?php echo sprintf('%.2f', $info['gailv'] * 100); ?>%</td>
             <td>
-                <?php echo $info['buzhong']; ?> <?php echo $info['bzsj']; ?><br/>
-                <?php echo $info['ljlxbz'] > 1 ? "连续 {$info['buzhong']} 期不中出现过 {$info['ljlxbz']} 次数" : ''; ?>
+                <?php echo $info['buzhong'] . '期'; ?> <br/>
+                <?php echo $info['bzsj']; ?><br/>
+                <?php echo $info['ljlxbz'] > 1 ? "共出现过 {$info['ljlxbz']} 次" : ''; ?>
             </td>
         </tr>
         <?php }?>
