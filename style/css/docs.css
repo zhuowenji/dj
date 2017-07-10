@@ -278,6 +278,7 @@ h4 code {
 
 /* Page headers */
 .bs-docs-header {
+  margin-bottom: 20px;
   padding-top:80px;
   font-size: 20px;
 }
@@ -688,7 +689,7 @@ h1[id] {
 /* Common styles for all types */
 .bs-callout {
   padding: 20px;
-  margin: 20px 0;
+  margin-bottom: 20px;
   border: 1px solid #eee;
   border-left-width: 5px;
   border-radius: 3px;

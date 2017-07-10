@@ -6,7 +6,7 @@ include '../function.php';
 include 'base.php';
 
 $msg = '';
-if (is_uploaded_file($_FILES['file']['tmp_name'])) {
+if (isset($_FILES['file']['tmp_name']) && is_uploaded_file($_FILES['file']['tmp_name'])) {
 
     $dir = $_SERVER[DOCUMENT_ROOT] . '/style/img/upload/sc.jpeg';
     if (move_uploaded_file($_FILES['file']['tmp_name'], $dir)) {
