@@ -12,9 +12,9 @@
         </div>
         
         <div class="form-group form-inline">
-            <input type="number" name="put_tou" class="form-control" value="<?php echo isset($_GET['put_tou']) && !empty($_GET['put_tou']) ? $_GET['put_tou'] :''; ?>" placeholder="头">
+            <input type="number" name="put_tou" value="<?php echo isset($_GET['put_tou']) && !empty($_GET['put_tou']) ? $_GET['put_tou'] :''; ?>" placeholder="头">
             -
-            <input type="number" name="put_wei" class="form-control" value="<?php echo isset($_GET['put_wei']) && !empty($_GET['put_wei']) ? $_GET['put_wei'] :''; ?>" placeholder="尾">
+            <input type="number" name="put_wei" value="<?php echo isset($_GET['put_wei']) && !empty($_GET['put_wei']) ? $_GET['put_wei'] :''; ?>" placeholder="尾">
         </div>
         <button type="submit" class="btn btn-default">查询</button>
         <button type="button" onclick="ClearTextArea()" class="btn btn-default">清除</button>
