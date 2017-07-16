@@ -81,7 +81,7 @@ function SixtyTuijian($kj, $qian)
     arsort($str);
     $tuijian = [];
     for ($i = 0; $i <= 9; $i++) {
-        $tuijian[$i] = '';
+       $tuijian[$i] = '';
     }
 
     $jian = [];
@@ -90,9 +90,12 @@ function SixtyTuijian($kj, $qian)
         $tuijian_wei = substr($value, 2, 1);
 
         $tuijian[$tuijian_tou] .= $tuijian_wei;
-        $jian[$tuijian_tou] = $tuijian_tou . '-' . $tuijian[$tuijian_tou];
+        $t = str_split($tuijian[$tuijian_tou]);
+        sort($t);
+        $jian[$tuijian_tou] = $tuijian_tou . '-' . join('',$t);
     }
 
+    ksort($jian);
     $tj = '';
     foreach ($jian as $value) {
         $tj .= $value . ',';
@@ -159,9 +162,12 @@ function fortyTuijian($kj, $qian)
         $tuijian_wei = substr($value, 2, 1);
 
         $tuijian[$tuijian_tou] .= $tuijian_wei;
-        $jian[$tuijian_tou] = $tuijian_tou . '-' . $tuijian[$tuijian_tou];
+        $t = str_split($tuijian[$tuijian_tou]);
+        sort($t);
+        $jian[$tuijian_tou] = $tuijian_tou . '-' . join('',$t);
     }
 
+    ksort($jian);
     $tj = '';
     foreach ($jian as $value) {
         $tj .= $value . ',';

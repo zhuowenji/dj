@@ -2,9 +2,11 @@
 $mysqli = connect();
 
 //获取所有数据
-$kj       = getAll($mysqli);
-$kj_first = current($kj);
-$kj_id    = $kj_first['id'];
+$kj        = getAll($mysqli);
+$kj_first  = current($kj);
+$kj_id     = $kj_first['id'];
+$kj_period = $kj_first['period'];
+$kj_time   = $kj_first['time'];
 
 //获取推荐的数据
 $tj_sql = 'select * from tj where type = 60 order by id desc limit 1';
@@ -66,8 +68,18 @@ if ($mysqli->affected_rows) {
 $qian       = array_splice($kj, 0, 3);
 $tuijian    = SixtyTuijian($kj, $qian);
 $new_period = $kj_id + 1;
+$new_period_actual = $kj_period + 1;
 
-$tj_install = 'INSERT INTO `tj` (`number`, `type`, `count`, `period`, `win`, `create_time`) VALUES ("' . $tuijian['number'] . '", ' . '60,' . $tuijian['number_count'] . ', ' . $new_period . ', NULL, ' . time() . ');';
+//下一期开码时间
+$new_time = strtotime($kj_time);
+$num =  date("N",$new_time);
+if($num == '7' || $num == '5'){
+    $new_time += 172800;
+}elseif($num == '2'){
+    $new_time += 259200;
+}
+
+$tj_install = 'INSERT INTO `tj` (`number`, `type`, `count`, `period`,`period_actual`, `open_time`, `win`, `create_time`) VALUES ("' . $tuijian['number'] . '", ' . '60,' . $tuijian['number_count'] . ', ' . $new_period .','.$new_period_actual.','.$new_time.', NULL, ' . time() . ');';
 $install    = $mysqli->query($tj_install);
 if ($install === false) {
     var_dump($mysqli->errno);

@@ -69,8 +69,18 @@ if ($mysqli->affected_rows) {
 $qian       = array_splice($kj, 0, 3);
 $tuijian    = FortyTuijian($kj, $qian);
 $new_period = $kj_id + 1;
+$new_period_actual = $kj_period + 1;
 
-$tj_install = 'INSERT INTO `tj` (`number`, `type`, `count`, `period`, `win`, `create_time`) VALUES ("' . $tuijian['number'] . '", ' . '40,' . $tuijian['number_count'] . ', ' . $new_period . ', NULL, ' . time() . ');';
+//下一期开码时间
+$new_time = strtotime($kj_time);
+$num =  date("N",$new_time);
+if($num == '7' || $num == '5'){
+    $new_time += 172800;
+}elseif($num == '2'){
+    $new_time += 259200;
+}
+
+$tj_install = 'INSERT INTO `tj` (`number`, `type`, `count`, `period`,`period_actual`, `open_time`, `win`, `create_time`) VALUES ("' . $tuijian['number'] . '", ' . '40,' . $tuijian['number_count'] . ', ' . $new_period .','.$new_period_actual.','.$new_time.', NULL, ' . time() . ');';
 $install    = $mysqli->query($tj_install);
 if ($install === false) {
     var_dump($mysqli->errno);
