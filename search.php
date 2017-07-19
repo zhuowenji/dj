@@ -13,8 +13,8 @@ foreach ($kj as $key => $value) {
 
 //搜索处理
 $da = ['3-5', '6-7'];
-if(isset($_GET['put_tou']) && !empty($_GET['put_tou']) && isset($_GET['put_wei']) && !empty($_GET['put_wei'])){
-    $put[] = $_GET['put_tou'] .'-'.$_GET['put_wei'];
+if (isset($_GET['put_tou']) && is_numeric($_GET['put_tou']) && isset($_GET['put_wei']) && is_numeric($_GET['put_wei'])) {
+    $put[] = $_GET['put_tou'] . '-' . $_GET['put_wei'];
 }
 
 if (isset($_GET['number']) && !empty($_GET['number']) || isset($put)) {
@@ -22,7 +22,7 @@ if (isset($_GET['number']) && !empty($_GET['number']) || isset($put)) {
     $number = trimall($is_tou);
 
     $da_arr = array_filter(explode(',', $number));
-    $da = isset($put) ?  array_unique(array_merge($da_arr,$put)) : array_unique($da_arr);
+    $da     = isset($put) ? array_unique(array_merge($da_arr, $put)) : array_unique($da_arr);
 
     $re = [];
     foreach ($da as $value) {

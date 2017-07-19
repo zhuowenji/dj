@@ -10,11 +10,11 @@
         <div class="form-group">
             <textarea id="textarea" class="form-control" rows="3" name="number" placeholder="3-5,6-7,"><?php echo isset($_GET['number']) && !empty($_GET['number']) ? $_GET['number'] : ''; ?></textarea>
         </div>
-        
+
         <div class="form-group form-inline">
-            <input type="number" name="put_tou" class="form-control" value="<?php echo isset($_GET['put_tou']) && !empty($_GET['put_tou']) ? $_GET['put_tou'] :''; ?>" placeholder="头">
+            <input type="number" name="put_tou" class="form-control" value="<?php echo isset($_GET['put_tou']) && is_numeric($_GET['put_tou']) ? $_GET['put_tou'] : ''; ?>" placeholder="头">
             -
-            <input type="number" name="put_wei" class="form-control" value="<?php echo isset($_GET['put_wei']) && !empty($_GET['put_wei']) ? $_GET['put_wei'] :''; ?>" placeholder="尾">
+            <input type="number" name="put_wei" class="form-control" value="<?php echo isset($_GET['put_wei']) && is_numeric($_GET['put_wei']) ? $_GET['put_wei'] : ''; ?>" placeholder="尾">
         </div>
         <button type="submit" class="btn btn-default">查询</button>
         <button type="button" onclick="ClearTextArea()" class="btn btn-default">清除</button>
@@ -29,7 +29,7 @@
             <h4>查询输入有误,请重新输入</h4>
         </div>
     <?php }?>
-    
+
     <h4>查询结果 <small><?php echo count($da); ?> 组头尾</small></h4>
 
     <table class="table table-bordered">
