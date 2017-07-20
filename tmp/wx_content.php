@@ -6,7 +6,7 @@
 </div>
 
 <div class="container">
-	<h3>微信群满100人，添加神策拉您入群</h3>
+	<h4>微信群满100人,添加神策拉您入群</h4>
 	<img src="/style/img/upload/sc.jpeg" class="img-responsive" alt="Responsive image" />
     <h3>神策公众号</h3>
     <img src="/style/img/gzh_big.jpg" height="700" width="650"  class="img-responsive" alt="Responsive image" />
