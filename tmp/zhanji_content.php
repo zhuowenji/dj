@@ -37,4 +37,29 @@
             <?php }?>
         </table>
     </div>
+
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <?php if ($tmp > 1) {?>
+        <li>
+          <a href="zhanji.php?number=<?php echo $number; ?>&page=<?php echo $tmp - 1; ?>" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <?php }?>
+
+        <?php for ($i = 1; $i <= $pagenum; $i++) {?>
+             <li class="<?php echo $tmp == $i ? 'active' : ''; ?>"><a href="zhanji.php?number=<?php echo $number; ?>&page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+        <?php }?>
+
+        <?php if ($tmp < $pagenum) {?>
+        <li>
+          <a href="zhanji.php?number=<?php echo $number; ?>&page=<?php echo $tmp + 1; ?>" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+        <?php }?>
+      </ul>
+    </nav>
+
 </div>

@@ -10,17 +10,14 @@ if (!isset($_GET['number']) || empty($_GET['number'])) {
 
 $number = $_GET['number'];
 
-//推荐号码
-$tj_sql = 'select * from tj where type = ' . $number . ' order by id desc';
-$tj_res = $mysqli->query($tj_sql);
-
-//获取最新一期推荐
-$tj_new = [];
+$sql_all = 'select *  from tj where type = ' . $number;
+$tj_all  = $mysqli->query($sql_all);
 
 //获取胜负
-$win  = 0;
-$loss = 0;
-while ($info = $tj_res->fetch_array()) {
+$win      = 0;
+$loss     = 0;
+$info_res = [];
+while ($info = $tj_all->fetch_array()) {
 
     if ($info['win'] == 1) {
         $win++;
@@ -29,7 +26,41 @@ while ($info = $tj_res->fetch_array()) {
     if ($info['win'] == 2) {
         $loss++;
     }
+    $info_res[] = $info;
+}
 
+//----分页----//
+
+//总行数
+$totalnums = count($info_res);
+
+// 页数常量
+$tmp = 1;
+if (isset($_GET['page']) && $_GET['page'] > 0) {
+    $tmp = $_GET['page'];
+}
+
+//每页显示条数
+$fnum = 15;
+
+//计算分页起始值
+if ($tmp == '') {
+    $num = 0;
+} else {
+    $num = ($tmp - 1) * $fnum;
+}
+
+//翻页数
+$pagenum = ceil($totalnums / $fnum);
+
+//记录
+$tj_sql = 'select * from tj where type = ' . $number . ' order by id desc limit ' . $num . ',' . $fnum;
+$tj_res = $mysqli->query($tj_sql);
+
+//获取最新一期推荐
+$tj_new = [];
+
+while ($info = $tj_res->fetch_array()) {
     $tj_new[$info['period']] = $info;
 }
 
