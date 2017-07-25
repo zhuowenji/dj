@@ -11,7 +11,7 @@
             <?php echo '开 ' . $lishi['number'] . ' 时间 ' . $lishi['time'] . ' 第' . $lishi['period'] . '期'; ?>
         </small>
         <?php } else {?>
-            <small><?php echo '第' . $tuijian['period_actual'] . '期,开码时间：'.date('Y-m-d',$tuijian['open_time'])?></small>
+            <small><?php echo '第' . $tuijian['period_actual'] . '期,开码时间：' . date('Y-m-d', $tuijian['open_time']); ?></small>
         <?php }?>
     </p>
   </div>
@@ -41,7 +41,7 @@
 
     <h3>
         <?php echo $win; ?>胜<?php echo $loss; ?>负
-        <small>查看更多</small>
+        <small><a href="/zhanji.php?number=60">查看更多</a></small>
     </h3>
     <div class="table-responsive">
         <table class="table">
@@ -56,8 +56,8 @@
             <?php foreach ($tj_new as $info) {?>
             <?php $kai = getInfo($info['period'], $mysqli);?>
             <tr class="<?php echo isset($win_tr_style[$info['win']]) ? $win_tr_style[$info['win']] : ''; ?>">
-                <td><?php echo $info['period_actual'];?></td>
-                <td><?php echo date('Y-m-d',$info['open_time'])?></td>
+                <td><?php echo $info['period_actual']; ?></td>
+                <td><?php echo date('Y-m-d', $info['open_time']); ?></td>
                 <td><?php echo $kai['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
                 <td>
                     <a href="60.php?tj=<?php echo $info['period']; ?>" ?>
