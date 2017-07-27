@@ -40,7 +40,7 @@
     </div>
 
     <h3>
-        <?php echo $win; ?>胜<?php echo $loss; ?>负
+        <?php echo $win + $loss; ?>中<?php echo $win; ?>
         <small><a href="/zhanji.php?number=40">查看更多</a></small>
     </h3>
     <div class="table-responsive">
