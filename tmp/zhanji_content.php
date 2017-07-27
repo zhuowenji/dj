@@ -10,7 +10,7 @@
 </div>
 <div class="container">
     <h3>
-        <?php echo $win; ?>胜<?php echo $loss; ?>负
+        <?php echo $win + $loss; ?>中<?php echo $win; ?>
     </h3>
     <div class="table-responsive">
         <table class="table">
