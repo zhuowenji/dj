@@ -81,7 +81,7 @@ function SixtyTuijian($kj, $qian)
     arsort($str);
     $tuijian = [];
     for ($i = 0; $i <= 9; $i++) {
-       $tuijian[$i] = '';
+        $tuijian[$i] = '';
     }
 
     $jian = [];
@@ -92,7 +92,7 @@ function SixtyTuijian($kj, $qian)
         $tuijian[$tuijian_tou] .= $tuijian_wei;
         $t = str_split($tuijian[$tuijian_tou]);
         sort($t);
-        $jian[$tuijian_tou] = $tuijian_tou . '-' . join('',$t);
+        $jian[$tuijian_tou] = $tuijian_tou . '-' . join('', $t);
     }
 
     ksort($jian);
@@ -164,7 +164,7 @@ function fortyTuijian($kj, $qian)
         $tuijian[$tuijian_tou] .= $tuijian_wei;
         $t = str_split($tuijian[$tuijian_tou]);
         sort($t);
-        $jian[$tuijian_tou] = $tuijian_tou . '-' . join('',$t);
+        $jian[$tuijian_tou] = $tuijian_tou . '-' . join('', $t);
     }
 
     ksort($jian);
@@ -378,4 +378,29 @@ function runtime()
     $time = (time() - strtotime('2017-5-25')) / 86400;
 
     return ceil($time);
+}
+
+// 获取一年的开次数
+function yearNumber()
+{
+    $year = date('Y', time());
+    $day  = 0;
+    for ($i = 1; $i <= 12; $i++) {
+        $now_month = $year . '-' . $i . '-01';
+        $day += date('t', strtotime($now_month));
+    }
+
+    $for_day = $day - 1;
+    $number  = 0;
+    $kj      = [2, 5, 7];
+    for ($i = 0; $i <= $for_day; $i++) {
+        $year_one = strtotime($year . '-01-01 00:00:00');
+        $year_day = $year_one + ($i * 86400);
+
+        if (in_array(date('N', $year_day), $kj)) {
+            $number++;
+        }
+    }
+
+    return $number;
 }

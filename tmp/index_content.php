@@ -35,7 +35,7 @@
             </tr>
         </table>
 
-    <h3><?php echo $year; ?>年记录</h3>
+    <h3><?php echo $year; ?>年记录 <small>今年剩余<?php echo $year_number; ?>次</small></h3>
     <table class="table table-bordered">
         <tr>
             <th>期数</th>

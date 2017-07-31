@@ -18,6 +18,9 @@ foreach ($kj as $key => $value) {
 //当前年份
 $year = date('Y', time());
 
+//剩余
+$year_number = yearNumber() - count($all[$year]);
+
 $year_tou = repeat($all, 0, 1, $year);
 $year_wei = repeat($all, 3, 1, $year);
 
