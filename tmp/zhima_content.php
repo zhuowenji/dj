@@ -18,7 +18,7 @@
             <th><?php echo $i; ?></th>
             <?php }?>
             <tr>
-                <td>千位</td>
+                <td>千</td>
                 <?php for ($i = 0; $i <= 9; $i++) {?>
                     <?php $qian_wz = strpos($year_qian[$year]['number'], (string) $i);?>
                     <?php $qian_mk = $qian_wz === false ? '未' : $qian_wz;?>
@@ -26,7 +26,7 @@
                 <?php }?>
             </tr>
             <tr>
-                <td>百位</td>
+                <td>百</td>
                 <?php for ($i = 0; $i <= 9; $i++) {?>
                     <?php $bai_wz = strpos($year_bai[$year]['number'], (string) $i);?>
                     <?php $bai_mk = $bai_wz === false ? '未' : $bai_wz;?>
@@ -34,7 +34,7 @@
                 <?php }?>
             </tr>
             <tr>
-                <td>十位</td>
+                <td>十</td>
                 <?php for ($i = 0; $i <= 9; $i++) {?>
                     <?php $shi_wz = strpos($year_shi[$year]['number'], (string) $i);?>
                     <?php $shi_mk = $shi_wz === false ? '未' : $shi_wz;?>
@@ -42,7 +42,7 @@
                 <?php }?>
             </tr>
             <tr>
-                <td>个位</td>
+                <td>个</td>
                 <?php for ($i = 0; $i <= 9; $i++) {?>
                     <?php $ge_wz = strpos($year_ge[$year]['number'], (string) $i);?>
                     <?php $ge_mk = $ge_wz === false ? '未' : $ge_wz;?>
