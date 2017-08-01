@@ -44,6 +44,7 @@
                 <li><a href="/search.php">查码</a></li>
                 <li><a href="/40.php" >40组码</a></li>
                 <li><a href="/liangen.php" >连跟码</a></li>
+                <li><a href="/jisuan.php" >收益计算</a></li>
               </ul>
             </nav>
         </div>
