@@ -19,7 +19,7 @@ if (isset($_GET['peilv']) && $_GET['peilv']) {
 
 //每100反水 
 $shui = 7;
-if (isset($_GET['shui']) && $_GET['shui']) {
+if (isset($_GET['shui']) && !empty($_GET['shui'])) {
     $shui = $_GET['shui'];
 }
 
