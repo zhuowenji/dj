@@ -19,7 +19,7 @@
             <input type="text" class="form-control"  name="shui"  value="<?php echo isset($_GET['shui']) && !empty($_GET['shui']) ? $_GET['shui'] : $shui; ?>">
         </div>
         <div class="form-group">
-            <label>打组数</label>
+            <label>每码打组数</label>
             <input type="text" class="form-control"  name="dzs"  value="<?php echo isset($_GET['dzs']) && !empty($_GET['dzs']) ? $_GET['dzs'] : $dzs; ?>">
         </div>
 
