@@ -109,7 +109,6 @@ function zhima($zhima, $sha_liu, $number = 4)
     $dama['shi']  = implode('', $shi);
     $dama['ge']   = implode('', $ge);
 
-    var_dump($dama);
     return $dama;
 }
 
