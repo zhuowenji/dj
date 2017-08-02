@@ -35,7 +35,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="/" class="navbar-brand">首页</a>
-              <a href="/60.php" class="navbar-brand">60组</a>
+              <a href="/60.php" class="navbar-brand">60专区</a>
               <a href="/zhima.php" class="navbar-brand">直码</a>
               <a href="/wx.php" class="navbar-brand">微信群</a>
             </div>
