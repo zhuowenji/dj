@@ -25,10 +25,10 @@
 
         <div class="form-group">
             <label>中</label>
-            <input type="radio" name="shu_ying" value="1" <?php echo $shu_ying == 1 ? 'checked="cecked"':'';?> />
+            <input type="radio" name="shu_ying" value="1" <?php echo $shu_ying == 1 ? 'checked="cecked"' : ''; ?> />
             &nbsp;&nbsp;&nbsp;
             <label>不中</label>
-            <input type="radio" name="shu_ying" value="2" <?php echo $shu_ying == 2 ? 'checked="cecked"':'';?> />
+            <input type="radio" name="shu_ying" value="2" <?php echo $shu_ying == 2 ? 'checked="cecked"' : ''; ?> />
         </div>
 
         <button type="submit" class="btn btn-default">查询</button>
@@ -42,31 +42,31 @@
     <table class="table table-condensed">
          <tr>
           <td>
-            <?php echo $dzs .' X '.$ms. ' = '. $ben ?> (打)<br/>
-            <?php echo $ben.' X '.($shui / 100).' = '. $shui_de ?> (水)<br/>
+            <?php echo $dzs . ' X ' . $ms . ' = ' . $ben; ?> (打)<br/>
+            <?php echo $ben . ' X ' . ($shui / 100) . ' = ' . $shui_de; ?> (水)<br/>
 
-            <?php if($shu_ying == 1){ ?>
-                <?php echo $dzs.' X '.$peilv.' = '.$zhong ?> (中)<br/>
-                <?php echo $zhong.' - '.$ben.' + '. $shui_de.' = '.$zhuan ?> (得)<br/>
-            <?php } ?>
+            <?php if ($shu_ying == 1) {?>
+                <?php echo $dzs . ' X ' . $peilv . ' = ' . $zhong; ?> (中)<br/>
+                <?php echo $zhong . ' - ' . $ben . ' + ' . $shui_de . ' = ' . $zhuan; ?> (得)<br/>
+            <?php }?>
 
-            <?php if($shu_ying == 2){ ?>
-                <?php echo $ben .' - '.$shui_de.' = '.$zhuan ?> (给) 
-            <?php } ?>
+            <?php if ($shu_ying == 2) {?>
+                <?php echo $ben . ' - ' . $shui_de . ' = ' . $zhuan; ?> (给)
+            <?php }?>
 
           </td>
           <td>
             打组数 X 码组数  = 打<br/>
-            本 X <?php echo $shui / 100 ?> = 水<br/>
+            本 X <?php echo $shui / 100; ?> = 水<br/>
 
-            <?php if($shu_ying == 1){ ?>
+            <?php if ($shu_ying == 1) {?>
                 码组数 X 赔率 = 中 <br/>
                 中 - 本 + 水 = 得 <br/>
-            <?php } ?>
+            <?php }?>
 
-            <?php if($shu_ying == 2){ ?>
+            <?php if ($shu_ying == 2) {?>
                 本 - 水 = 给
-            <?php } ?>
+            <?php }?>
           </td>
         </tr>
     </table>
