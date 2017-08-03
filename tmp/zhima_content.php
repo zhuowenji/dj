@@ -2,7 +2,7 @@
   <div class="container">
     <h1><?php echo $first['new']['number']; ?><small>第<?php echo $first['new']['period']; ?>期 <?php echo $first['new']['time']; ?></small></h1>
     <p>
-        <small>直码专区 &nbsp; 要玩就玩大的</small>
+        <small>直码专区 &nbsp; 要玩就玩大的 &nbsp; 要搞就搞大事</small>
     </p>
   </div>
 </div>
