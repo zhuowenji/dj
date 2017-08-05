@@ -41,7 +41,7 @@
 
     <h3>
         <?php echo $win + $loss; ?>中<?php echo $win; ?>
-        <small><a href="/zhanji.php?number=60">查看更多</a></small>
+        <small><a href="/zhanji.php?number=50">查看更多</a></small>
     </h3>
     <div class="table-responsive">
         <table class="table">
@@ -60,7 +60,7 @@
                 <td><?php echo date('Y-m-d', $info['open_time']); ?></td>
                 <td><?php echo $kai['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
                 <td>
-                    <a href="60.php?tj=<?php echo $info['period']; ?>" ?>
+                    <a href="50.php?tj=<?php echo $info['period']; ?>" ?>
                     <?php echo $info['count']; ?>
                     </a>
                 </td>

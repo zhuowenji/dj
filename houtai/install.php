@@ -41,8 +41,8 @@ if (isset($_POST['number']) && !empty($_POST['number']) && is_numeric($_POST['nu
         die;
     } else {
         $msg = '添加成功、';
-        include 'task/60_task.php';
-        include 'task/40_task.php';
+        include 'task/50_task.php';
+        include 'task/30_task.php';
     }
 }
 

@@ -28,7 +28,7 @@
                 <td><?php echo date('Y-m-d', $info['open_time']); ?></td>
                 <td><?php echo $kai['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
                 <td>
-                    <a href="60.php?tj=<?php echo $info['period']; ?>" ?>
+                    <a href="<?php echo $_GET['number'] ?>.php?tj=<?php echo $info['period']; ?>" ?>
                     <?php echo $info['count']; ?>
                     </a>
                 </td>

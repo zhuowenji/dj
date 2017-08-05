@@ -5,7 +5,7 @@ include 'function.php';
 $mysqli = connect();
 
 //推荐号码
-$tj_sql = 'select * from tj where type = 40 order by id desc';
+$tj_sql = 'select * from tj where type = 30 order by id desc';
 $tj_res = $mysqli->query($tj_sql);
 
 //获取最新一期推荐
@@ -59,5 +59,5 @@ $win_tr_style = [
 ];
 
 include 'tmp/head.php';
-include 'tmp/40_content.php';
+include 'tmp/30_content.php';
 include 'tmp/foot.php';

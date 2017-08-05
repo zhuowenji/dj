@@ -1,15 +1,16 @@
 <?php
+// include '../config.php';
+// include '../function.php';
+
 $mysqli = connect();
 
 //获取所有数据
-$kj        = getAll($mysqli);
-$kj_first  = current($kj);
-$kj_id     = $kj_first['id'];
-$kj_period = $kj_first['period'];
-$kj_time   = $kj_first['time'];
+$kj       = getAll($mysqli);
+$kj_first = current($kj);
+$kj_id    = $kj_first['id'];
 
 //获取推荐的数据
-$tj_sql = 'select * from tj where type = 60 order by id desc limit 1';
+$tj_sql = 'select * from tj where type = 30 order by id desc limit 1';
 $tj_res = $mysqli->query($tj_sql);
 if ($mysqli->affected_rows) {
 
@@ -52,21 +53,21 @@ if ($mysqli->affected_rows) {
             $win = 2; //不中
         }
 
-        $up_sql = 'UPDATE `tj` SET `win` = ' . $win . ' WHERE  type = 60 AND `period` = ' . $tj['period'] . ';';
+        $up_sql = 'UPDATE `tj` SET `win` = ' . $win . ' WHERE  type = 40 AND `period` = ' . $tj['period'] . ';';
         $tj_up  = $mysqli->query($up_sql);
         if ($tj_up === false) {
             var_dump($mysqli->errno);
             var_dump($mysqli->error);
-            $msg .= '60码更新失败、';
+            $msg .= '30码更新失败、';
             die;
         }
-        $msg .= '60码更新成功、';
+        $msg .= '30码更新成功、';
     }
 }
 
 //推荐号码
 $qian       = array_splice($kj, 0, 3);
-$tuijian    = SixtyTuijian($kj, $qian);
+$tuijian    = FortyTuijian($kj, $qian);
 $new_period = $kj_id + 1;
 $new_period_actual = $kj_period + 1;
 
@@ -79,7 +80,7 @@ if($num == '7' || $num == '5'){
     $new_time += 259200;
 }
 
-$tj_install = 'INSERT INTO `tj` (`number`, `type`, `count`, `period`,`period_actual`, `open_time`, `win`, `create_time`) VALUES ("' . $tuijian['number'] . '", ' . '60,' . $tuijian['number_count'] . ', ' . $new_period .','.$new_period_actual.','.$new_time.', NULL, ' . time() . ');';
+$tj_install = 'INSERT INTO `tj` (`number`, `type`, `count`, `period`,`period_actual`, `open_time`, `win`, `create_time`) VALUES ("' . $tuijian['number'] . '", ' . '30,' . $tuijian['number_count'] . ', ' . $new_period .','.$new_period_actual.','.$new_time.', NULL, ' . time() . ');';
 $install    = $mysqli->query($tj_install);
 if ($install === false) {
     var_dump($mysqli->errno);
