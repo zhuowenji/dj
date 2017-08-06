@@ -6,6 +6,7 @@
 </div>
 
 <div class="container">
+    <!--
     <form method="get" action="search.php">
         <div class="form-group">
             <textarea id="textarea" class="form-control" rows="3" name="number" placeholder="3-5,6-7,"><?php echo isset($_GET['number']) && !empty($_GET['number']) ? $_GET['number'] : ''; ?></textarea>
@@ -20,6 +21,7 @@
         <button type="button" onclick="ClearTextArea()" class="btn btn-default">清除</button>
     </form>
     <p></p>
+    -->
     <?php if (count($da) > 0) {?>
         <div class="bs-callout bs-callout-danger" id="callout-tables-striped-ie8">
             <p><?php echo implode(',', $da); ?></p>
