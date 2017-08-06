@@ -53,6 +53,7 @@
         <?php }?>
     </table>
 
+<!--
     <h3> 近5年头尾各重复出现次数 </h3>
     <table class="table table-bordered">
         <tr>
@@ -80,5 +81,5 @@
         </tr>
         <?php }?>
     </table>
-
+-->
 </div>
