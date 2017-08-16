@@ -69,7 +69,6 @@ $zhima['ge']   = array_count_values($ge);
 
 $dama = zhima($zhima, $sha_liu);
 
-var_dump($dama);
 
 function zhima($zhima, $sha_liu, $number = 4)
 {
