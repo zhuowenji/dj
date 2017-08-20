@@ -51,7 +51,7 @@ if (isset($_GET['number']) && !empty($_GET['number']) || isset($put)) {
     //纪录查询记录
     $ip     = $_SERVER['REMOTE_ADDR'];
     $da_log = json_encode($da);
-    $sql    = "INSERT INTO `search_log` (`id`, `content`, `ip`, `time`) VALUES (NULL, ' " . $da_log . "', '" . $ip . "', CURRENT_TIMESTAMP);";
+    $sql    = "INSERT INTO `search_log` (`id`, `content`, `ip`, `time`) VALUES (NULL, '" . $da_log . "', '" . $ip . "', CURRENT_TIMESTAMP);";
     $res    = $mysqli->query($sql);
     if ($res === false) {
         var_dump($mysqli->errno);
