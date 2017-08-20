@@ -69,6 +69,7 @@ $zhima['ge']   = array_count_values($ge);
 
 $dama = zhima($zhima, $sha_liu);
 
+
 function zhima($zhima, $sha_liu, $number = 4)
 {
 
@@ -86,11 +87,11 @@ function zhima($zhima, $sha_liu, $number = 4)
     }
 
     if (isset($sha_liu['sha_shi'])) {
-        unset($zhima['shi'][$sha_liu['sha_qian']]);
+        unset($zhima['shi'][$sha_liu['sha_shi']]);
     }
 
     if (isset($sha_liu['sha_ge'])) {
-        unset($zhima['ge'][$sha_liu['sha_qian']]);
+        unset($zhima['ge'][$sha_liu['sha_ge']]);
     }
 
     $qian = array_slice(array_keys($zhima['qian']), 0, $number);
