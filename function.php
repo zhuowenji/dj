@@ -1,5 +1,23 @@
 <?php
 
+//获取所有牛人
+function getNiuren($mysqli)
+{
+    $sql = 'select * from niuren order by back_money desc ,money desc';
+    $res = $mysqli->query($sql);
+    if ($res === false) {
+        var_dump($mysqli->errno);
+        var_dump($mysqli->error);
+    }
+
+    $niuren = [];
+    while ($data = $res->fetch_array()) {
+        $niuren[] = $data;
+    }
+
+    return $niuren;
+}
+
 //获取所有开奖
 function getAll($mysqli)
 {
