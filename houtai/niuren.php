@@ -8,6 +8,7 @@ include 'base.php';
 //连接获取数据
 $mysqli = connect();
 $niuren = getNiuren($mysqli);
+var_dump($niuren);
 
 include '../tmp/admin/head.php';
 include '../tmp/admin/niuren_content.php';
