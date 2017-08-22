@@ -24,7 +24,7 @@
             <tr>
                 <td><?php echo $info['id']; ?></td>
                 <td><?php echo $info['name']; ?></td>
-                <td><?php echo substr($info['phone'], 6); ?></td>
+                <td><?php echo $info['phone']; ?></td>
                 <td><font color="red"><?php echo floor($info['residual_money']); ?></font></td>
                 <td><?php echo floor($info['back_money']); ?></td>
                 <td><?php echo floor($info['money']); ?></td>

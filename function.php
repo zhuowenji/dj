@@ -1,9 +1,10 @@
 <?php
 
 //获取所有牛人
-function getNiuren($mysqli)
+function getNiuren($mysqli, $orderBy = 'id')
 {
-    $sql = 'select * from niuren order by back_money desc ,money desc';
+
+    $sql = 'select * from niuren order by ' . $orderBy;
     $res = $mysqli->query($sql);
     if ($res === false) {
         var_dump($mysqli->errno);
