@@ -37,7 +37,8 @@
               <a href="/houtai" class="navbar-brand">后台首页</a>
               <?php if (isset($_SESSION['username'])) {?>
               <a href="/houtai/install.php" class="active navbar-brand">录码</a>
-              <a href="/houtai/erweima.php" class="active navbar-brand">二维码</a>
+              <a href="/houtai/niuren.php" class="active navbar-brand">牛人</a>
+              <!--<a href="/houtai/erweima.php" class="active navbar-brand">二维码</a>-->
               <?php }?>
             </div>
             <?php if (isset($_SESSION['username'])) {?>
