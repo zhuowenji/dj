@@ -10,6 +10,7 @@
     <div class="table-responsive">
         <table class="table table-bordered">
             <tr>
+                <th>Id</th>
                 <th>姓名</th>
                 <th>手机</th>
                 <th>剩余</th>
@@ -21,6 +22,7 @@
             </tr>
             <?php foreach ($niuren as $info) {?>
             <tr>
+                <td><?php echo $info['id']; ?></td>
                 <td><?php echo $info['name']; ?></td>
                 <td><?php echo substr($info['phone'], 6); ?></td>
                 <td><font color="red"><?php echo floor($info['residual_money']); ?></font></td>
