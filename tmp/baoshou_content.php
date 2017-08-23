@@ -20,7 +20,7 @@
                 <th>保本</th>
             </tr>
             <?php foreach ($niuren as $info) {?>
-            <tr>
+            <tr class="<?php echo $status_tr_style[$info['status']]; ?>">
                 <td><a href="/baoshou_info.php?id=<?php echo $info['id']; ?>"><?php echo substr($info['phone'], 6); ?></td>
                 <td><font color="red"><?php echo floatval($info['residual_money']); ?></font></td>
                 <td><?php echo floatval($info['back_money']); ?></td>

@@ -83,14 +83,16 @@ if ($msg == '' && $res == 'ok') {
         $up_residual_money = $info['residual_money'] + $ben_zhuan;
         $up_sql            = 'UPDATE `niuren` SET `residual_money` = ' . $up_residual_money . ' WHERE `id` = ' . $info['id'];
 
-        if ($info['status'] == 0) {
-            $query_sql = $mysqli->query($up_sql);
-            //记录错误日志
-            if ($res === false) {
-                $up_err_log = $mysqli->errno . '-' . $mysqli->error;
-                $err_log    = 'INSERT INTO `niuren_up_log` ( `niuren_id`, `periods`, `msg`, `ctime`) VALUES ( ' . $info['id'] . ", $period, '" . $up_err_log . "', " . time() . ')';
-                $mysqli->query($err_log);
-            }
+        if ($info['status'] != 0) {
+            continue;
+        }
+
+        $query_sql = $mysqli->query($up_sql);
+        //记录错误日志
+        if ($res === false) {
+            $up_err_log = $mysqli->errno . '-' . $mysqli->error;
+            $err_log    = 'INSERT INTO `niuren_up_log` ( `niuren_id`, `periods`, `msg`, `ctime`) VALUES ( ' . $info['id'] . ", $period, '" . $up_err_log . "', " . time() . ')';
+            $mysqli->query($err_log);
         }
 
         //记录明细
