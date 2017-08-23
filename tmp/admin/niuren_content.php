@@ -1,6 +1,6 @@
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
-    <h2>录入最新码期</h2>
+    <h2>保收牛人列表</h2>
     <p><?php echo $_SESSION['username']; ?> </p>
   </div>
 </div>
