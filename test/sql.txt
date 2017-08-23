@@ -1,0 +1,2 @@
+-----------8.24
+ALTER TABLE `niuren_installments` CHANGE `period` `period` INT(11) NULL COMMENT '期数', CHANGE `tj_period` `tj_period` INT(11) NULL COMMENT '期数ID', CHANGE `mashu` `mashu` INT(11) NULL COMMENT '码组数', CHANGE `dazushu` `dazushu` INT(11) NULL COMMENT '打组数', CHANGE `peilv` `peilv` INT(11) NULL COMMENT '赔率', CHANGE `win` `win` TINYINT(4) NULL COMMENT '命中';
