@@ -19,7 +19,38 @@ function getNiuren($mysqli, $orderBy = 'id')
     return $niuren;
 }
 
-//获取所有开奖
+//通过ID获取用户信息
+function getNiurenInfo($mysqli, $id)
+{
+    $sql = 'select * from niuren where id = ' . $id;
+    $res = $mysqli->query($sql);
+    if ($res === false) {
+        var_dump($mysqli->errno);
+        var_dump($mysqli->error);
+    }
+
+    return $res->fetch_array();
+}
+
+//获取所有牛人明细
+function getNiurenInstallments($mysqli, $id)
+{
+    $sql = 'select * from niuren_installments where niuren_id = ' . $id . ' order by id desc';
+    $res = $mysqli->query($sql);
+    if ($res === false) {
+        var_dump($mysqli->errno);
+        var_dump($mysqli->error);
+    }
+
+    $niuren = [];
+    while ($data = $res->fetch_array()) {
+        $niuren[] = $data;
+    }
+
+    return $niuren;
+}
+
+//获取所有开码
 function getAll($mysqli)
 {
     $sql = 'select * from kaijiang order by id desc';

@@ -21,13 +21,13 @@
             </tr>
             <?php foreach ($niuren as $info) {?>
             <tr>
-                <td><?php echo substr($info['phone'], 6); ?></td>
-                <td><font color="red"><?php echo floor($info['residual_money']); ?></font></td>
-                <td><?php echo floor($info['back_money']); ?></td>
-                <td><?php echo floor($info['money']); ?></td>
+                <td><a href="/baoshou_info.php?id=<?php echo $info['id']; ?>"><?php echo substr($info['phone'], 6); ?></td>
+                <td><font color="red"><?php echo floatval($info['residual_money']); ?></font></td>
+                <td><?php echo floatval($info['back_money']); ?></td>
+                <td><?php echo floatval($info['money']); ?></td>
                 <td>
                 <?php $yifan = $info['money'] - $info['back_money'];?>
-                <?php echo $yifan > 0 ? floor($yifan) * 0.7 : 0; ?>
+                <?php echo $yifan > 0 ? floatval($yifan) * 0.7 : 0; ?>
                 </td>
             </tr>
             <?php }?>

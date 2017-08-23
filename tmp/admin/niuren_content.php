@@ -7,6 +7,8 @@
 
 <div class="container">
 
+    <a href="niuren_up.php" >更新</a>
+
     <div class="table-responsive">
         <table class="table table-bordered">
             <tr>

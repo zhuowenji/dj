@@ -8,7 +8,7 @@ include 'base.php';
 //连接获取数据
 $mysqli = connect();
 
-//获取开奖时间
+//获取开码时间
 $day = date('Y-m-d', time());
 if (isset($_POST['date']) && !empty($_POST['date'])) {
     $day = $_POST['date'];
