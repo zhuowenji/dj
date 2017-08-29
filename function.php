@@ -1,5 +1,11 @@
 <?php
 
+//baoshou
+$baoshou_tr_style = [
+    1 => 'warning',
+    2 => 'danger',
+];
+
 //获取所有牛人
 function getNiuren($mysqli, $orderBy = 'id')
 {
