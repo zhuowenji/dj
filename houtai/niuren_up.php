@@ -71,7 +71,6 @@ if (isset($_POST['shu_ying']) && $_POST['shu_ying']) {
     $res = 'ok';
 }
 
-$up_res = '';
 if ($msg == '' && $res == 'ok') {
     //获取所有牛人
     $niuren = getNiuren($mysqli);
@@ -100,7 +99,8 @@ if ($msg == '' && $res == 'ok') {
         $query        = $mysqli->query($installments);
     }
 
-    $up_res = '更新完成';
+    header('location:/houtai/niuren.php?msg=更新完成');
+
 }
 
 include '../tmp/admin/head.php';

@@ -31,9 +31,9 @@
             <input type="radio" name="shu_ying" value="2" <?php echo $shu_ying == 2 ? 'checked="cecked"' : ''; ?> />
         </div>
         <div class="form-group">
-            <label for="msg"><font color="red"><?php echo $msg ?: ''; ?><?php echo $up_res ?: ''; ?></font></label>
+            <label for="msg"><font color="red"><?php echo $msg ?: ''; ?></font></label>
         </div>
 
-          <button type="submit" class="btn btn-default">添加</button>
+          <button type="submit" class="btn btn-default">更 新</button>
     </form>
  </div>

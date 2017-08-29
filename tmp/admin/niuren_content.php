@@ -18,6 +18,9 @@
     <a class="btn btn-default" href="niuren_up.php" >更新</a>
     <a class="btn btn-default" href="niuren_add.php" >新增</a>
     <p></p>
+    <?php if (isset($_GET['msg']) && !empty($_GET['msg'])) {?>
+    <div class="alert alert-success" role="alert"><?php echo $_GET['msg']; ?></div>
+    <?php }?>
     <div class="table-responsive">
         <table class="table table-bordered">
             <tr>
@@ -48,9 +51,10 @@
                     <?php if ($info['status'] == 0) {?>
                         <a href="" class="btn btn-primary btn-sm" >追加</a>
                         <a href="" class="btn btn-warning btn-sm" >提取</a>
-                        <a href="javascript:if(confirm('确定停止用户：<?php echo $info['name']; ?>')){location='/houtai/niuren.php?del=<?php echo $info['id']; ?>'}" class="btn btn-danger btn-sm ">停止</a>
+                        <a href="javascript:if(confirm('停止用户：<?php echo $info['name']; ?>')){location='/houtai/niuren.php?stop=<?php echo $info['id']; ?>'}" class="btn btn-danger btn-sm ">停止</a>
                     <?php } elseif ($info['status'] == 1) {?>
-                        <a href="" class="btn btn-info btn-sm">继续</a>
+                        <a href="javascript:if(confirm('启动用户：<?php echo $info['name']; ?>')){location='/houtai/niuren.php?jixu=<?php echo $info['id']; ?>'}" class="btn btn-info btn-sm ">继续</a>
+                        <a href="javascript:if(confirm('退出用户：<?php echo $info['name']; ?>')){location='/houtai/niuren.php?out=<?php echo $info['id']; ?>'}" class="btn btn-danger btn-sm ">退出</a>
                     <?php } else {?>
                         <a href="" class="btn btn-success btn-sm">加入</a>
                     <?php }?>
