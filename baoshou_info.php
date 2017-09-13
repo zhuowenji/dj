@@ -19,6 +19,18 @@ $win_tr_style = [
     2 => 'danger',
 ];
 
+$status_style = [
+    0 => 'success',
+    1 => 'warning',
+    2 => 'danger',
+];
+
+$status = [
+    '0' => '继续',
+    '1' => '停止',
+    '2' => '退出',
+];
+
 include 'tmp/head.php';
 include 'tmp/baoshou_info_content.php';
 include 'tmp/foot.php';

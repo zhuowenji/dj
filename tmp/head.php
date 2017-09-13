@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="七星彩,头尾,七星彩头尾,七星彩论坛,湛江头尾,头尾规律">
-    <meta name="description" content="海南湛江七星彩，头尾，头尾神策，60组神码，40组神码">
+    <meta name="description" content="海南湛江七星彩，头尾，头尾神策，50组神码，30组神码">
     <title>
         头尾神策 fuxiben.com
     </title>
