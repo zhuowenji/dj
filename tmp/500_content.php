@@ -19,7 +19,7 @@
             <tr class="<?php echo $win_tr_style[$info['status']]; ?>">
                 <td><?php echo $info['time']; ?></td>
                 <td><?php echo $info['amounts']; ?></td>
-                <td><?php echo $info['amounts']; ?></td>
+                <td><?php echo $info['total']; ?></td>
             </tr>
             <?php }?>
         </table>
