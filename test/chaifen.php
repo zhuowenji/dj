@@ -1,7 +1,7 @@
 
 <form>
 
-<input type="test" name="ma" value="<?php echo isset($_GET['ma']) ? $_GET['ma'] : ''; ?> ">
+<input type="test" name="ma" value="<?php echo isset($_GET['ma']) ? $_GET['ma'] : ''; ?>">
 <button>提交</button>
 </form>
 <?php
