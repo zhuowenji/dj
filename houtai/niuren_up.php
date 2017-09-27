@@ -99,8 +99,6 @@ if ($msg == '' && $res == 'ok') {
         $query        = $mysqli->query($installments);
     }
 
-    header('location:/houtai/niuren.php?msg=更新完成');
-
 }
 
 include '../tmp/admin/head.php';
