@@ -52,7 +52,7 @@ if ($row != null) {
 //更新下一期
 $zuihou = substr($chai[0], -3, 3);
 if ($zuihou == '120') {
-    $chai[0] = date('ymd', time() + 86400) . '001';
+    $chai[0] = date('ymd', time()) . '001';
 } else {
     $chai[0] = $chai[0] + 1;
 }
