@@ -10,7 +10,7 @@ $get = file_get_contents($url);
 $content = iconv('UTF-8', 'GB2312//IGNORE', $get);
 
 $dian = '.';
-for ($i = 1; $i < 1003; $i++) {
+for ($i = 1; $i < 1002; $i++) {
     $dian .= '.';
 }
 
