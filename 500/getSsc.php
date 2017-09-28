@@ -10,14 +10,14 @@ $get = file_get_contents($url);
 $content = iconv('UTF-8', 'GB2312//IGNORE', $get);
 
 $dian = '.';
-for ($i = 1; $i < 1001; $i++) {
+for ($i = 1; $i < 1003; $i++) {
     $dian .= '.';
 }
 
 $preg = '/var Con_BonusCode ' . $dian . '/i';
 preg_match($preg, $content, $data);
 
-$new = substr($data[0], -19, 19);
+$new = substr($data[0], -20, 20);
 var_dump($new);die;
 $chai = explode('=', $new);
 
