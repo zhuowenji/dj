@@ -12,12 +12,14 @@
             <tr>
                 <th>期数</th>
                 <th>号码</th>
+                <th>码数量</th>
                 <th>推荐</th>
             </tr>
             <?php foreach ($res as $info) {?>
             <tr class="<?php echo $win_tr_style[$info['status']]; ?>">
                 <td><?php echo $info['periods']; ?></td>
                 <td><?php echo $info['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
+                <td><?php echo substr_count($info['tuijian'], ',') + 1; ?></td>
                 <td><input type="text" class="form-control" placeholder="休息" value="<?php echo $info['tuijian']; ?>"></td>
             </tr>
             <?php }?>
