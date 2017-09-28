@@ -26,7 +26,7 @@ $time = date('Y-m-d H:i:s', time());
 
 $mysqli = connect();
 
-$sql = 'select * from ssc  where  number is not null and periods = ' . $chai[0];
+$sql = 'select * from ssc  where  periods = ' . $chai[0];
 $res = $mysqli->query($sql);
 $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 if ($row != null) {
@@ -44,6 +44,7 @@ if ($row != null) {
             $status = 2;
         }
     }
+
     $up_sql = 'UPDATE `ssc` SET `status` = ' . $status . ',`number` = "' . $chai[1] . '" WHERE `ssc`.`periods` = ' . $chai[0];
     $mysqli->query($up_sql);
 }
