@@ -17,7 +17,8 @@ for ($i = 1; $i < 1002; $i++) {
 $preg = '/var Con_BonusCode ' . $dian . '/i';
 preg_match($preg, $content, $data);
 
-$new = substr($data[0], -20);
+$new = str_replace(['"', ';'], ['', ''], substr($data[0], -20));
+
 var_dump($new);die;
 $chai = explode('=', $new);
 
