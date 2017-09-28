@@ -35,14 +35,14 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="/" class="navbar-brand">首页</a>
-              <a href="/baoshou.php" class="navbar-brand">保收牛人</a>
-              <a href="/50.php" class="navbar-brand">50专区</a>
+              <a href="/50.php" class="navbar-brand">七星彩</a>
+              <a href="/500/ssc.php" class="navbar-brand" >时时彩</a>
             </div>
             <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
               <ul class="nav navbar-nav">
                 <li><a href="/wx.php">微信</a></li>
                 <!-- <li><a href="/zhima.php" >直码</a></li> -->
-                <li><a href="/500/ssc.php" >时时彩</a></li>
+                <li><a href="/baoshou.php" >保收牛人</a></li>
                 <!--<li><a href="/search.php">号码概率查询</a></li>-->
                 <!--<li><a href="/liangen.php" >连跟码计算</a></li>-->
                 <!--<li><a href="/jisuan.php" >收益计算</a></li>-->
