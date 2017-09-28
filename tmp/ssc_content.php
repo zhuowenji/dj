@@ -18,7 +18,7 @@
             <tr class="<?php echo $win_tr_style[$info['status']]; ?>">
                 <td><?php echo $info['periods']; ?></td>
                 <td><?php echo $info['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
-                <td><?php echo $info['tuijian']; ?></td>
+                <td><textarea><?php echo $info['tuijian']; ?></textarea></td>
             </tr>
             <?php }?>
         </table>
