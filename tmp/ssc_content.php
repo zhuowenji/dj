@@ -28,7 +28,7 @@
       <ul class="pagination">
         <?php if ($tmp > 1) {?>
         <li>
-          <a href="index.php?page=<?php echo $tmp - 1; ?>" aria-label="Previous">
+          <a href="ssc.php?page=<?php echo $tmp - 1; ?>" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
@@ -40,7 +40,7 @@
 
         <?php if ($tmp < $pagenum) {?>
         <li>
-          <a href="index.php?page=<?php echo $tmp + 1; ?>" aria-label="Next">
+          <a href="ssc.php?page=<?php echo $tmp + 1; ?>" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
