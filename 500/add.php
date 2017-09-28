@@ -11,13 +11,9 @@ $msg      = '';
 $shu_ying = 1;
 $amount   = 0;
 
-$sql = 'select *  from wuwan_jihua order by id desc  limit 1';
-
-$res = $mysqli->query($sql);
-
-while ($row = $res->fetch_assoc()) {
-    $data = $row;
-}
+$sql  = 'select *  from wuwan_jihua order by id desc  limit 1';
+$res  = $mysqli->query($sql);
+$data = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 if (isset($_POST['amount']) && !empty($_POST['amount']) && isset($_POST['shu_ying'])) {
 
