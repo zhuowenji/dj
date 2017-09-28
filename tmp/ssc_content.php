@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="50" />
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
     <h1>重庆时时彩结果</h1>
