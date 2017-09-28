@@ -1,7 +1,7 @@
-<meta http-equiv="refresh" content="50 url=http://fuxiben.com/500/ssc.php" />
+<meta http-equiv="refresh" content="40 url=http://fuxiben.com/500/ssc.php" />
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
-    <h1>重庆时时彩结果</h1>
+    <h1>重庆时时彩</h1>
     <p></p>
   </div>
 </div>
