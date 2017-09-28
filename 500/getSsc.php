@@ -1,7 +1,7 @@
 <?php
 
-include '/config.php';
-include '/function.php';
+include '/project/fuxiben/config.php';
+include '/project/fuxiben/function.php';
 
 //获取号码
 $url = 'http://buy.cqcp.net/trend/ssc/scchart_11.aspx';
