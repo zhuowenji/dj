@@ -18,7 +18,7 @@
             <tr class="<?php echo $win_tr_style[$info['status']]; ?>">
                 <td><?php echo $info['periods']; ?></td>
                 <td><?php echo $info['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
-                <td><textarea><?php echo $info['tuijian']; ?></textarea></td>
+                <td><input type="text" class="form-control" placeholder="休息" value="<?php echo $info['tuijian']; ?>"></td>
             </tr>
             <?php }?>
         </table>
