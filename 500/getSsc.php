@@ -19,7 +19,6 @@ preg_match($preg, $content, $data);
 
 $new = str_replace(['"', ';'], ['', ''], substr($data[0], -20));
 
-var_dump($new);die;
 $chai = explode('=', $new);
 
 //数据库操作
