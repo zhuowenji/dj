@@ -26,43 +26,47 @@ $time = date('Y-m-d H:i:s', time());
 
 $mysqli = connect();
 
-$sql = 'select * from ssc  where periods = ' . $chai[0];
-
+$sql = 'select * from ssc  where  number is not null and periods = ' . $chai[0];
+echo $sql;
 $res = $mysqli->query($sql);
 $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
-//不存在则插入一条
 if ($row != null) {
-    exit;
+    //存在推荐号码才去更新状态
+    $status = 0;
+    if (!empty($row['tuijian'])) {
+        $kai = explode(',', $chai[1]);
+
+        $wan_qian = $kai[0] . $kai[1];
+
+        $tuijian = explode(',', $row['tuijian']);
+        if (in_array($wan_qian, $tuijian)) {
+            $status = 1;
+        } else {
+            $status = 2;
+        }
+    }
+    $up_sql = 'UPDATE `ssc` SET `status` = ' . $status . ',`number` = "' . $chai[1] . '" WHERE `ssc`.`periods` = ' . $chai[0];
+    $mysqli->query($up_sql);
+} else {
+    $sql = "INSERT INTO `ssc` (`id`, `number`, `periods`, `tuijian`, `status`, `time`) VALUES (NULL, '" . $chai[1] . "','" . $chai[0] . "', NULL, '0', '" . $time . "');";
+    $mysqli->query($sql);
 }
 
-$sql = "INSERT INTO `ssc` (`id`, `number`, `periods`, `tuijian`, `status`, `time`) VALUES (NULL, '" . $chai[1] . "', " . $chai[0] . ", NULL, '0', '" . $time . "');";
-$mysqli->query($sql);
-
+//更新下一期
 $zuihou = substr($chai[0], -3, 3);
-if ($zuihou == '001') {
-    $chai[0] = date('ymd', time() - 86400) . '120';
+if ($zuihou == '120') {
+    $chai[0] = date('ymd', time() + 86400) . '001';
 } else {
-    $chai[0] = $chai[0] - 1;
+    $chai[0] = $chai[0] + 1;
 }
 
-$sql_shang = 'select * from ssc where status = 0 and periods = ' . $chai[0];
-$shang     = $mysqli->query($sql_shang);
-$shang_row = mysqli_fetch_array($shang, MYSQLI_ASSOC);
-if ($shang_row == null) {
+$xia_qi  = 'select * from ssc  where  number is null and periods = ' . $chai[0];
+$xia_res = $mysqli->query($xia_qi);
+$xia_row = mysqli_fetch_array($xia_res, MYSQLI_ASSOC);
+if ($xia_row != null) {
     exit;
 }
-
-//更新上一期
-$kai      = explode(',', $chai[1]);
-$wan_qian = $kai[0] . $kai[1];
-
-$tuijian = explode(',', $shang_row['tuijian']);
-if (in_array($wan_qian, $tuijian)) {
-    $status = 1;
-} else {
-    $status = 2;
-}
-
-$up_sql = 'UPDATE `ssc` SET `status` = ' . $status . ' WHERE `ssc`.`periods` = ' . $chai[0];
-$mysqli->query($up_sql);
+//这时候要加入号码
+$sql = "INSERT INTO `ssc` (`id`, `number`, `periods`, `tuijian`, `status`, `time`) VALUES (NULL, NULL,'" . $chai[0] . "', NULL, '0', '" . $time . "');";
+$mysqli->query($sql);

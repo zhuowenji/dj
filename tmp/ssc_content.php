@@ -16,8 +16,8 @@
             <?php foreach ($res as $info) {?>
             <tr class="<?php echo $win_tr_style[$info['status']]; ?>">
                 <td><?php echo $info['periods']; ?></td>
-                <td><?php echo $info['number']; ?></td>
-                <td><p class="navbar-text navbar-right"><?php echo $info['tuijian']; ?></p></td>
+                <td><?php echo $info['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
+                <td><?php echo $info['tuijian']; ?></td>
             </tr>
             <?php }?>
         </table>

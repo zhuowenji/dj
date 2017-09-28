@@ -42,6 +42,7 @@ $sql = 'select * from ssc order by id desc limit ' . $num . ',' . $fnum;
 $res = $mysqli->query($sql);
 
 $win_tr_style = [
+    0 => '',
     1 => 'success',
     2 => 'danger',
 ];
