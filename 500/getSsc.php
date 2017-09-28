@@ -1,7 +1,7 @@
 <?php
 
-include '../config.php';
-include '../function.php';
+// include '../config.php';
+// include '../function.php';
 
 //获取号码
 $url = 'http://buy.cqcp.net/trend/ssc/scchart_11.aspx';
@@ -32,7 +32,7 @@ $res = $mysqli->query($sql);
 $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 //不存在则插入一条
-if ($row == null) {
+if ($row != null) {
     exit;
 }
 
