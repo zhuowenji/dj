@@ -26,7 +26,7 @@ $time = date('Y-m-d H:i:s', time());
 
 $mysqli = connect();
 
-$sql = 'select * from ssc  where  periods = ' . $chai[0];
+$sql = 'select * from ssc  where  number is null and periods = ' . $chai[0];
 $res = $mysqli->query($sql);
 $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 if ($row != null) {
