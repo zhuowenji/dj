@@ -41,8 +41,8 @@
             <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
               <ul class="nav navbar-nav">
                 <li><a href="/wx.php">微信</a></li>
-                <li><a href="/zhima.php" >直码</a></li>
-                <li><a href="/30.php" >30专区</a></li>
+                <!-- <li><a href="/zhima.php" >直码</a></li> -->
+                <li><a href="/500/ssc.php" >时时彩</a></li>
                 <!--<li><a href="/search.php">号码概率查询</a></li>-->
                 <!--<li><a href="/liangen.php" >连跟码计算</a></li>-->
                 <!--<li><a href="/jisuan.php" >收益计算</a></li>-->
