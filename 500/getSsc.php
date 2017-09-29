@@ -76,7 +76,7 @@ if ($xia_row != null) {
 }
 
 //获取推荐码
-$tuijian_sql = 'select number from ssc where number is not null  order by id desc limit 20';
+$tuijian_sql = 'select number from ssc where number is not null  order by id desc limit 15';
 $tuijian_res = $mysqli->query($tuijian_sql);
 
 $tuijian_unmber = [];
@@ -96,14 +96,21 @@ $rep_quchu = str_replace(',', '', $sub_quchu);
 $suoyou = explode(',', $number);
 
 $tiqu = [];
+
+$qian6 = [];
+$hou4  = [];
 foreach ($suoyou as $v) {
-    if (in_array($v, $tiqu) || count($tiqu) == 8) {
-        continue;
+    if (!in_array($v, $qian6) && count($qian6) < 6) {
+        $qian6[] = $v;
+    } elseif (!in_array($v, $qian6) && !in_array($v, $hou4)) {
+        $hou4[] = $v;
     }
 
-    $tiqu[] = $v;
 }
-sort($tiqu);
+
+$filter_hou4 = array_filter($hou4);
+$hou4        = array_slice($filter_hou4, -2, 2);
+$tiqu        = array_merge($qian6, $hou4);
 
 $tuijian = '';
 foreach ($tiqu as $v) {
