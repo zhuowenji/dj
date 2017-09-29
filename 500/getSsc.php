@@ -1,5 +1,16 @@
 <?php
 
+date_default_timezone_set('PRC');
+$hous    = date('h', time());
+$zx_time = ['03', '04', '05', '06', '07', '08', '09'];
+if (in_array($hous, $zx_time)) {
+    echo '时间未到';
+    die;
+}
+
+$end_time = strtotime(date('Y-m-d 2:00', time()));
+$now_time = time();
+
 include '/project/fuxiben/config.php';
 include '/project/fuxiben/function.php';
 
