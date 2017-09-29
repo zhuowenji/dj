@@ -111,6 +111,7 @@ foreach ($suoyou as $v) {
 $filter_hou4 = array_filter($hou4);
 $hou4        = array_slice($filter_hou4, -2, 2);
 $tiqu        = array_merge($qian6, $hou4);
+sort($tiqu);
 
 $tuijian = '';
 foreach ($tiqu as $v) {
