@@ -23,5 +23,4 @@ foreach ($ma as $v) {
     }
 }
 
-echo substr($c, 0, -1);
 ?>
