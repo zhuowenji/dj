@@ -47,6 +47,12 @@ $win_tr_style = [
     2 => 'danger',
 ];
 
+$win_style = [
+    0 => '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>',
+    1 => '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>',
+    2 => '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>',
+];
+
 include '../tmp/head.php';
 include '../tmp/ssc_content.php';
 include '../tmp/foot.php';

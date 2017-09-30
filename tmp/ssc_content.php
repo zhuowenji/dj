@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="40 url=http://fuxiben.com/500/ssc.php" />
+<meta http-equiv="refresh" content="40 url=/500/ssc.php" />
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
     <h1>重庆时时彩</h1>
@@ -12,15 +12,25 @@
             <tr>
                 <th>期数</th>
                 <th>号码</th>
-                <th>码数量</th>
-                <th>推荐</th>
+                <th>42-49组</th>
+                <th></th>
+                <th>55-56组</th>
             </tr>
             <?php foreach ($res as $info) {?>
-            <tr class="<?php echo $win_tr_style[$info['status']]; ?>">
+            <tr>
                 <td><?php echo $info['periods']; ?></td>
                 <td><?php echo $info['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
-                <td><?php echo substr_count($info['tuijian'], ',') + 1; ?></td>
-                <td><input type="text" class="form-control" placeholder="休息" value="<?php echo $info['tuijian']; ?>"></td>
+                <td class="<?php echo $win_tr_style[$info['status_40']]; ?> form-inline">
+                  <input type="text" class="form-control" placeholder="无" value="<?php echo $info['tuijian_40']; ?>">
+                  <?php echo empty($info['tuijian_40']) ? '' : substr_count($info['tuijian_40'], ',') + 1; ?>
+                  <?php echo $win_style[$info['status_40']]; ?>
+                </td>
+                <td></td>
+                <td class="<?php echo $win_tr_style[$info['status']]; ?> form-inline">
+                  <input type="text" class="form-control" placeholder="无" value="<?php echo $info['tuijian']; ?>">
+                  <?php echo empty($info['tuijian']) ? '' : substr_count($info['tuijian'], ',') + 1; ?>
+                  <?php echo $win_style[$info['status']]; ?>
+                </td>
             </tr>
             <?php }?>
         </table>
