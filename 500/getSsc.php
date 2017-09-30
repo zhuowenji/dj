@@ -58,17 +58,7 @@ if ($row != null) {
         }
     }
 
-    //更新40组
-    if (!empty($row['tuijian_40'])) {
-        $tuijian_40 = explode(',', $row['tuijian_40']);
-        if (in_array($wan_qian, $tuijian_40)) {
-            $status_40 = 1;
-        } else {
-            $status_40 = 2;
-        }
-    }
-
-    $up_sql = 'UPDATE `ssc` SET `status` = ' . $status . ',`status_40` = ' . $status_40 . ',`number` = "' . $chai[1] . '" WHERE `ssc`.`periods` = ' . $chai[0];
+    $up_sql = 'UPDATE `ssc` SET `status` = ' . $status . ',`number` = "' . $chai[1] . '" WHERE `ssc`.`periods` = ' . $chai[0];
     $mysqli->query($up_sql);
 }
 
