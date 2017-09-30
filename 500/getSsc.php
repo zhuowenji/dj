@@ -102,10 +102,6 @@ $qian   = '';
 foreach ($tuijian_unmber as $info) {
     //混合
     $number .= substr($info['number'], 0, 3) . ',';
-
-    //万和千
-    $wan .= substr($info['number'], 0, 1);
-    $qian .= substr($info['number'], 2, 1);
 }
 
 //去除最近出现过的一个值
@@ -124,7 +120,6 @@ foreach ($suoyou as $v) {
     } elseif (!in_array($v, $qian6) && !in_array($v, $hou4)) {
         $hou4[] = $v;
     }
-
 }
 
 $hou4 = array_slice($hou4, -3, 3);
@@ -144,27 +139,7 @@ foreach ($tiqu as $v) {
     }
 }
 
-//提取万千
-$ex_wan     = array_unique(str_split($wan));
-$ex_qian    = array_unique(str_split($qian));
-$wan_7      = array_slice($ex_wan, 0, 7);
-$qian_7     = array_slice($ex_qian, 0, 7);
-$tuijian_40 = '';
-sort($wan_7);
-sort($qian_7);
-foreach ($wan_7 as $v) {
-    foreach ($qian_7 as $s) {
-        if ($s != $v) {
-            $xuyao_40 = $v . $s;
-            if ($xuyao_40 != $rep_quchu) {
-                $tuijian_40 .= $xuyao_40 . ',';
-            }
-        }
-    }
-}
+$tuijian = substr($tuijian, 0, -1);
 
-$tuijian_40 = substr($tuijian_40, 0, -1);
-$tuijian    = substr($tuijian, 0, -1);
-
-$sql = "INSERT INTO `ssc` (`id`, `number`, `periods`, `tuijian`, `tuijian_40`,`status`, `status_40`,`time`) VALUES (NULL, NULL,'" . $chai[0] . "', '" . $tuijian . "','" . $tuijian_40 . "','0','0', '" . $time . "');";
+$sql = "INSERT INTO `ssc` (`id`, `number`, `periods`, `tuijian`,`status`,`time`) VALUES (NULL, NULL,'" . $chai[0] . "', '" . $tuijian . "','0','" . $time . "');";
 $mysqli->query($sql);
