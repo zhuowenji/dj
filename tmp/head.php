@@ -11,6 +11,9 @@
     <script type="text/javascript" src="/style/js/function.js"></script>
     <script type="text/javascript" src="/style/js/jquery.js"></script>
     <script type="text/javascript" src="/style/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/style/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="/style/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link href="/style/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="/style/css/bootstrap.css" rel="stylesheet">
     <link href="/style/css/docs.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

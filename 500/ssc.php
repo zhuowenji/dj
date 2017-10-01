@@ -7,12 +7,38 @@ $mysqli = connect();
 
 //----分页----//
 
-$sql_all = 'select *  from ssc';
+$where      = '';
+$page_where = '';
+if (isset($_GET['date_start']) || isset($_GET['date_end'])) {
+
+    //分页url使用
+    $page_where = '&date_start=' . $_GET['date_start'] . '&date_end=' . $_GET['date_end'];
+
+    $date_start = str_replace('-', '', $_GET['date_start']);
+    $date_end   = str_replace('-', '', $_GET['date_end']);
+
+    $start = $date_start ? substr($date_start, 2) . '001' : 0;
+    $end   = substr($date_end, 2) . '120';
+
+    $where = 'where periods >= ' . $start . ' and periods <= ' . $end;
+}
+
+$sql_all = 'select *  from ssc ' . $where;
 $tj_all  = $mysqli->query($sql_all);
 
 $info_res = [];
+$win      = 0;
+$loss     = 0;
 while ($info = $tj_all->fetch_array()) {
     $info_res[] = $info;
+
+    if ($info['status'] == 1) {
+        $win++;
+    }
+
+    if ($info['status'] == 2) {
+        $loss++;
+    }
 }
 
 //总行数
@@ -38,7 +64,7 @@ if ($tmp == '') {
 $pagenum = ceil($totalnums / $fnum);
 
 //记录
-$sql = 'select * from ssc order by id desc limit ' . $num . ',' . $fnum;
+$sql = 'select * from ssc ' . $where . ' order by id desc limit ' . $num . ',' . $fnum;
 $res = $mysqli->query($sql);
 
 $win_tr_style = [
