@@ -23,6 +23,21 @@ if (isset($_GET['date_start']) || isset($_GET['date_end'])) {
     $where = 'where periods >= ' . $start . ' and periods <= ' . $end;
 }
 
+if (isset($_GET['time']) && !empty($_GET['time'])) {
+
+    if ($_GET['time'] == 'today') {
+        $date = date('ymd', time());
+    }
+
+    if ($_GET['time'] == 'tomorrow') {
+        $date = date('ymd', time() - 86400);
+    }
+
+    $start = $date . '001';
+    $end   = $date . '120';
+    $where = 'where periods >= ' . $start . ' and periods <= ' . $end;
+}
+
 $sql_all = 'select *  from ssc ' . $where;
 $tj_all  = $mysqli->query($sql_all);
 

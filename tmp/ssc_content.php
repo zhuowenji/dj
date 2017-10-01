@@ -12,13 +12,15 @@
         <form class="form-inline">
           <div class="form-group">
             <label for="datetimepicker">时间</label>
-            <input class="form-control" type="text" value="" id="date_start" name="date_start" readonly="readonly">
+            <input class="form-control" type="text" value="<?php echo isset($_GET['date_start']) ? $_GET['date_start'] : ''; ?>" id="date_start" name="date_start" readonly="readonly">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail2">-</label>
             <input class="form-control" type="text" value="<?php echo date('Y-m-d', time()); ?>" id="date_end" name="date_end" id="datetimepicker2" readonly="readonly">
           </div>
-          <button type="submit" class="btn btn-default">查看</button>
+          <button type="submit" class="btn btn-default">搜索</button>
+          <a href="/500/ssc.php?time=today"  class="<?php echo (isset($_GET['time']) && $_GET['time'] == 'today') ? 'btn btn-primary' : 'btn btn-default'; ?> ">今天</a>
+          <a href="/500/ssc.php?time=tomorrow"  class="<?php echo (isset($_GET['time']) && $_GET['time'] == 'tomorrow') ? 'btn btn-primary' : 'btn btn-default'; ?> " >昨天</a>
         </form>
     </div>
 
