@@ -31,17 +31,21 @@
         <table class="table">
             <tr>
                 <th>期数</th>
+                <th>开</th>
+                <th>码个数</th>
                 <th>号码</th>
-                <th>55-56个号</th>
+
             </tr>
             <?php foreach ($res as $info) {?>
             <tr>
                 <td><?php echo $info['periods']; ?></td>
                 <td><?php echo $info['number'] ?: '<span class="glyphicon glyphicon-time" aria-hidden="true"></span>'; ?></td>
-                <td class="<?php echo $win_tr_style[$info['status']]; ?> form-inline">
-                  <input type="text" class="form-control" placeholder="无" value="<?php echo $info['tuijian']; ?>">
-                  <?php echo empty($info['tuijian']) ? '' : substr_count($info['tuijian'], ',') + 1; ?>
-                  <?php echo $win_style[$info['status']]; ?>
+                <td>
+                    <?php echo empty($info['tuijian']) ? '' : substr_count($info['tuijian'], ',') + 1; ?>
+                    <?php echo $win_style[$info['status']]; ?>
+                </td>
+                <td class="form-inline">
+                  <input type="text" style="<?php echo $win_tr_style[$info['status']]; ?>"  class=" form-control" placeholder="无" value="<?php echo $info['tuijian']; ?>">
                 </td>
             </tr>
             <?php }?>
