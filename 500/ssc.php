@@ -84,8 +84,8 @@ $res = $mysqli->query($sql);
 
 $win_tr_style = [
     0 => '',
-    1 => 'background-color:#f2dede',
-    2 => 'background-color:#dff0d8',
+    1 => 'background-color:#dff0d8',
+    2 => 'background-color:#f2dede',
 ];
 
 $win_style = [
