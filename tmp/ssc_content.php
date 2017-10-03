@@ -2,7 +2,7 @@
 <div class="bs-docs-header" id="content" tabindex="-1">
   <div class="container">
     <h1>重庆时时彩</h1>
-    <p></p>
+    <p><small>万位、千位 两定位</small></p>
   </div>
 </div>
 
