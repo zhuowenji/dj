@@ -41,7 +41,7 @@
 
         <?php if ($tmp < $pagenum) {?>
         <li>
-          <a href="index.php?page=<?php echo $tmp + 1; ?>" aria-label="Next">
+          <a href="ying.php?page=<?php echo $tmp + 1; ?>" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
