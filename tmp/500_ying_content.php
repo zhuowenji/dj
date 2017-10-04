@@ -29,14 +29,14 @@
       <ul class="pagination">
         <?php if ($tmp > 1) {?>
         <li>
-          <a href="index.php?page=<?php echo $tmp - 1; ?>" aria-label="Previous">
+          <a href="ying.php?page=<?php echo $tmp - 1; ?>" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
         <?php }?>
 
         <?php for ($i = 1; $i <= $pagenum; $i++) {?>
-             <li class="<?php echo $tmp == $i ? 'active' : ''; ?>"><a href="index.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+             <li class="<?php echo $tmp == $i ? 'active' : ''; ?>"><a href="ying.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
         <?php }?>
 
         <?php if ($tmp < $pagenum) {?>
