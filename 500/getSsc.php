@@ -101,21 +101,29 @@ $rep_quchu = str_replace(',', '', $sub_quchu);
 //混合
 $suoyou = explode(',', $number);
 
-$tiqu  = [];
-$qian6 = [];
-$hou4  = [];
+$tiqu = [];
+// $qian6 = [];
+// $hou4  = [];
+// foreach ($suoyou as $v) {
+//     if (!in_array($v, $qian6) && count($qian6) < 6) {
+//         $qian6[] = $v;
+//     } elseif (!in_array($v, $qian6) && !in_array($v, $hou4)) {
+//         $hou4[] = $v;
+//     }
+// }
+
+// $hou4 = array_slice($hou4, -3, 3);
+// $tiqu = array_merge($qian6, $hou4);
+//
+// sort($tiqu);
+// unset($tiqu[0]);
+
 foreach ($suoyou as $v) {
-    if (!in_array($v, $qian6) && count($qian6) < 6) {
-        $qian6[] = $v;
-    } elseif (!in_array($v, $qian6) && !in_array($v, $hou4)) {
-        $hou4[] = $v;
+    if (!in_array($v, $tiqu) && count($tiqu) < 8) {
+        $tiqu[] = $v;
     }
 }
-
-$hou4 = array_slice($hou4, -3, 3);
-$tiqu = array_merge($qian6, $hou4);
 sort($tiqu);
-unset($tiqu[0]);
 
 $tuijian = '';
 foreach ($tiqu as $v) {
