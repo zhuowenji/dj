@@ -69,9 +69,12 @@
               <?php }?>
             </li>
         <?php }?>
+
+        <?php if ($pagenum > 5) {?>
         <li class="<?php echo $tmp > 5 ? 'active' : ''; ?>">
           <a>...</a>
         </li>
+        <?php }?>
 
         <?php if ($tmp < $pagenum) {?>
         <li>
