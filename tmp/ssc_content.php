@@ -63,8 +63,15 @@
         <?php }?>
 
         <?php for ($i = 1; $i <= $pagenum; $i++) {?>
-             <li class="<?php echo $tmp == $i ? 'active' : ''; ?>"><a href="ssc.php?page=<?php echo $i . $page_where; ?>"><?php echo $i; ?></a></li>
+             <li class="<?php echo $tmp == $i ? 'active' : ''; ?>">
+              <?php if ($i <= 5) {?>
+                <a href="ssc.php?page=<?php echo $i . $page_where; ?>"><?php echo $i; ?></a>
+              <?php }?>
+            </li>
         <?php }?>
+        <li class="<?php echo $tmp > 5 ? 'active' : ''; ?>">
+          <a>...</a>
+        </li>
 
         <?php if ($tmp < $pagenum) {?>
         <li>
