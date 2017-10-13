@@ -139,5 +139,7 @@ foreach ($tiqu as $v) {
 
 $tuijian = substr($tuijian, 0, -1);
 
-$sql = "INSERT INTO `ssc` (`id`, `number`, `periods`, `tuijian`,`status`,`time`) VALUES (NULL, NULL,'" . $chai[0] . "', '" . $tuijian . "','0','" . $time . "');";
-$mysqli->query($sql);
+if ($chai[0] > 1) {
+    $sql = "INSERT INTO `ssc` (`id`, `number`, `periods`, `tuijian`,`status`,`time`) VALUES (NULL, NULL,'" . $chai[0] . "', '" . $tuijian . "','0','" . $time . "');";
+    $mysqli->query($sql);
+}
