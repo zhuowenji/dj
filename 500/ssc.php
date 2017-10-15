@@ -66,7 +66,7 @@ if (isset($_GET['page']) && $_GET['page'] > 0) {
 }
 
 //每页显示条数
-$fnum = 120;
+$fnum = 12000;
 
 //计算分页起始值
 if ($tmp == '') {
