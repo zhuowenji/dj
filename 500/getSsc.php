@@ -2,7 +2,7 @@
 
 date_default_timezone_set('PRC');
 $hous    = date('H', time());
-$zx_time = ['02', '03', '04', '05', '06', '07', '08', '09'];
+$zx_time = ['03', '04', '05', '06', '07', '08', '09'];
 
 if (in_array($hous, $zx_time)) {
     echo '时间未到';
