@@ -57,11 +57,10 @@ if ($mysqli->affected_rows) {
         if ($tj_up === false) {
             var_dump($mysqli->errno);
             var_dump($mysqli->error);
-            $msg .= '50码更新失败、';
             die;
         }
 
-        $msg .= '50码更新成功、';
+        echo '更新完成';
     }
 }
 
