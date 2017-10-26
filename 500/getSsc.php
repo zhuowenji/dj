@@ -16,21 +16,18 @@ include '/project/fuxiben/config.php';
 include '/project/fuxiben/function.php';
 
 //获取号码
-$url = 'http://buy.cqcp.net/trend/ssc/scchart_11.aspx';
-$get = file_get_contents($url);
 
-$content = iconv('UTF-8', 'GB2312//IGNORE', $get);
+$url = 'http://f.apiplus.net/cqssc-1.json';
+$ch  = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+$res   = curl_exec($ch);
+$cqssc = json_decode($res, true);
 
-$dian = '.';
-for ($i = 1; $i < 1002; $i++) {
-    $dian .= '.';
-}
-
-$preg = '/var Con_BonusCode ' . $dian . '/i';
-preg_match($preg, $content, $data);
-
-$new  = str_replace(['"', ';'], ['', ''], substr($data[0], -20));
-$chai = explode('=', $new);
+$chai[0] = substr($cqssc['data'][0]['expect'], 2);
+$chai[1] = $cqssc['data'][0]['opencode'];
 
 //数据库操作
 $time = date('Y-m-d H:i:s', time());
@@ -40,7 +37,7 @@ $mysqli = connect();
 $sql = 'select * from ssc  where  number is null and periods = ' . $chai[0];
 $res = $mysqli->query($sql);
 $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
-if ($row != null) {
+if (!empty($row)) {
     //存在推荐号码才去更新状态
     $status    = 0;
     $status_40 = 0;
