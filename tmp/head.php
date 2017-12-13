@@ -50,6 +50,15 @@
                 <!--<li><a href="/liangen.php" >连跟码计算</a></li>-->
                 <!--<li><a href="/jisuan.php" >收益计算</a></li>-->
               </ul>
+              <ul>
+                <li id="google_translate_element">
+                    <script type="text/javascript">
+                      function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
+                      }
+                    </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </li>
+              </ul>
             </nav>
-        </div>
+
     </header>
