@@ -45,7 +45,7 @@
               <ul class="nav navbar-nav">
                 <!-- <li><a href="/wx.php">微信</a></li> -->
                 <!-- <li><a href="/zhima.php" >直码</a></li> -->
-                <li><a href="/baoshou.php" >保收牛人</a></li>
+                <!-- <li><a href="/baoshou.php" >保收牛人</a></li> -->
                 <!--<li><a href="/search.php">号码概率查询</a></li>-->
                 <!--<li><a href="/liangen.php" >连跟码计算</a></li>-->
                 <!--<li><a href="/jisuan.php" >收益计算</a></li>-->
