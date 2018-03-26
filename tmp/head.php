@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="/" class="navbar-brand">首页</a>
-              <a href="/500/ssc.php" class="navbar-brand" >时时彩</a>
+              <!-- <a href="/500/ssc.php" class="navbar-brand" >时时彩</a> -->
               <a href="/50.php" class="navbar-brand">七星彩</a>
             </div>
             <nav id="bs-navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
