@@ -13,10 +13,6 @@ include '/project/fuxiben/config.php';
 include '/project/fuxiben/function.php';
 
 //获取号码
-$url = 'http://caipiao.163.com/award/qxc/';
-$get = file_get_contents($url);
-
-//获取号码
 
 $url = 'http://f.apiplus.net/qxc-1.json';
 $ch  = curl_init();
